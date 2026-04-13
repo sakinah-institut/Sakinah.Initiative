@@ -1,6 +1,6 @@
 /* =============================================
-   SAKINAH INITIATIVE - stylesindex.css
-   Moderner, ruhiger & eleganter Stil 2026
+   SAKINAH INITIATIVE – Komplette stylesindex.css
+   Final Version – Ruhig, elegant und modern
    ============================================= */
 
 :root {
@@ -8,9 +8,8 @@
   --accent-green: #006d3f;
   --light-green: #e8f5e9;
   --beige: #f8f5f0;
-  --gold: #d4af37;
-  --text-dark: #333;
-  --text-light: #555;
+  --soft-gold: #d4af37;
+  --text-dark: #2c2c2c;
 }
 
 * {
@@ -23,78 +22,81 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   background: var(--beige);
   color: var(--text-dark);
-  line-height: 1.7;
+  line-height: 1.75;
   font-size: 1.05rem;
 }
 
-/* ====================== HERO ====================== */
+/* ====================== HERO SECTION ====================== */
 .hero {
-  background: linear-gradient(rgba(0, 78, 0, 0.75), rgba(0, 78, 0, 0.65)), 
+  background: linear-gradient(rgba(0, 78, 0, 0.68), rgba(0, 78, 0, 0.48)), 
               url('icons/hero-background.jpg') center/cover no-repeat;
   color: white;
   text-align: center;
-  padding: 140px 20px 100px;
+  padding: 170px 20px 130px;
   position: relative;
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 840px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-logo {
-  width: 130px;
-  height: 130px;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  width: 155px;
+  height: 155px;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.45));
 }
 
 .hero-title {
-  font-size: 3.2rem;
+  font-size: 3.25rem;
   font-weight: 700;
-  margin-bottom: 16px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  margin-bottom: 18px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.55);
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
-  max-width: 680px;
-  margin: 0 auto 35px;
+  font-size: 1.42rem;
+  max-width: 720px;
+  margin: 0 auto 45px;
   opacity: 0.95;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
 }
 
 .hero-button {
   background: white;
   color: var(--primary-green);
-  padding: 16px 36px;
+  padding: 17px 42px;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: 1.22rem;
   text-decoration: none;
   display: inline-block;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
   transition: all 0.3s ease;
 }
 
 .hero-button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.38);
 }
 
 /* ====================== NAVIGATION ====================== */
 .menu {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.98);
+  background: rgba(255, 255, 255, 0.97);
   z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
 }
 
 .menu-button {
   background: var(--primary-green);
   color: white;
-  font-size: 1.4rem;
-  padding: 14px 20px;
+  font-size: 1.5rem;
+  padding: 16px 20px;
   border: none;
   width: 100%;
   text-align: left;
@@ -105,38 +107,34 @@ body {
   display: none;
   list-style: none;
   background: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
 }
 
 .menu-list.show {
   display: block;
 }
 
-.menu-list li {
-  border-bottom: 1px solid #eee;
-}
-
-.menu-list a {
+.menu-list li a {
   display: block;
-  padding: 16px 20px;
+  padding: 17px 24px;
   color: var(--text-dark);
   text-decoration: none;
   font-weight: 500;
 }
 
-.menu-list a:hover {
+.menu-list li a:hover {
   background: var(--light-green);
   color: var(--accent-green);
 }
 
-/* ====================== USER INFO ====================== */
+/* ====================== USER STATUS ====================== */
 .user-info {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 22px;
+  right: 22px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   z-index: 110;
 }
 
@@ -146,7 +144,7 @@ body {
   text-decoration: none;
   background: none;
   border: none;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   cursor: pointer;
 }
 
@@ -156,7 +154,7 @@ body {
 
 /* ====================== MAIN SECTIONS ====================== */
 .section {
-  padding: 70px 20px;
+  padding: 80px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -164,125 +162,116 @@ body {
 h2 {
   text-align: center;
   color: var(--primary-green);
-  font-size: 2.1rem;
-  margin-bottom: 50px;
+  font-size: 2.25rem;
+  margin-bottom: 55px;
   font-weight: 600;
 }
 
-/* Nächstes Gebet */
+/* Nächstes Gebet Highlight */
 .next-prayer-section {
   background: white;
   padding-top: 40px;
-  padding-bottom: 60px;
 }
 
 .prayer-card {
   background: white;
-  border-radius: 24px;
-  padding: 40px 30px;
+  border-radius: 26px;
+  padding: 45px 35px;
   text-align: center;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-  max-width: 460px;
-  margin: 0 auto 30px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.09);
+  max-width: 480px;
+  margin: 0 auto 35px;
 }
 
 .prayer-name {
-  font-size: 1.6rem;
+  font-size: 1.65rem;
   color: var(--accent-green);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .countdown-big {
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: var(--primary-green);
-  margin: 12px 0;
+  margin: 10px 0 20px;
 }
 
 .current-prayer {
-  text-align: center;
-  font-size: 1.25rem;
-  color: var(--text-light);
+  font-size: 1.3rem;
+  color: #555;
 }
 
-/* Inspiration Grid */
+/* Tägliche Inspiration */
 .inspiration-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 32px;
 }
 
 .inspiration-card {
   background: white;
-  padding: 32px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  padding: 36px;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
 }
 
 .inspiration-card h3 {
   color: var(--primary-green);
-  margin-bottom: 20px;
-  font-size: 1.45rem;
+  margin-bottom: 22px;
+  font-size: 1.5rem;
 }
 
 .arabic {
   font-family: 'Amiri', serif;
-  font-size: 1.65rem;
-  line-height: 1.9;
-  color: #003300;
-  margin-bottom: 16px;
+  font-size: 1.75rem;
+  line-height: 2;
+  color: #002b00;
+  margin-bottom: 18px;
 }
 
 /* Feiertage */
 .feiertage-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 26px;
 }
 
 .feiertag-card {
   background: white;
-  padding: 25px;
-  border-radius: 18px;
+  padding: 28px;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
 }
 
 .feiertag-card h4 {
   color: var(--accent-green);
-  margin-bottom: 12px;
-}
-
-.countdown {
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--primary-green);
+  margin-bottom: 14px;
 }
 
 /* Schnellzugriff */
 .quick-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
 }
 
 .quick-card {
   background: white;
-  padding: 45px 20px;
-  border-radius: 20px;
+  padding: 50px 30px;
+  border-radius: 22px;
   text-align: center;
-  font-size: 1.35rem;
+  font-size: 1.38rem;
   font-weight: 600;
   color: var(--primary-green);
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
 
 .quick-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-  background: var(--light-green);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
 }
 
 /* Über uns Teaser */
@@ -292,16 +281,16 @@ h2 {
 }
 
 .about-teaser p {
-  max-width: 720px;
-  margin: 0 auto 30px;
-  font-size: 1.15rem;
+  max-width: 740px;
+  margin: 0 auto 35px;
+  font-size: 1.18rem;
 }
 
 .more-link {
   color: var(--accent-green);
   font-weight: 600;
+  font-size: 1.25rem;
   text-decoration: none;
-  font-size: 1.2rem;
 }
 
 .more-link:hover {
@@ -313,8 +302,12 @@ footer {
   background: var(--primary-green);
   color: white;
   text-align: center;
-  padding: 40px 20px;
-  margin-top: 60px;
+  padding: 50px 20px 40px;
+  margin-top: 90px;
+}
+
+footer p {
+  margin-bottom: 10px;
 }
 
 footer a {
@@ -329,11 +322,11 @@ footer a:hover {
 /* ====================== DARK MODE ====================== */
 .dark-mode {
   background: #0f1a0f;
-  color: #ddd;
+  color: #e0e0e0;
 }
 
 .dark-mode .hero {
-  background: linear-gradient(rgba(0, 40, 0, 0.9), rgba(0, 40, 0, 0.8)), 
+  background: linear-gradient(rgba(0, 40, 0, 0.82), rgba(0, 40, 0, 0.62)), 
               url('icons/hero-background.jpg') center/cover no-repeat;
 }
 
@@ -354,12 +347,15 @@ footer a:hover {
 /* ====================== RESPONSIVE ====================== */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.6rem;
+    font-size: 2.65rem;
   }
   .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.28rem;
+  }
+  .hero {
+    padding: 130px 15px 100px;
   }
   .section {
-    padding: 50px 15px;
+    padding: 60px 15px;
   }
 }
