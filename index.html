@@ -3,37 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sakinah Initiative</title>
-  <link rel="stylesheet" href="stylesindex.css" />
+  <title>Sakinah Initiative - Test</title>
   <script defer src="script.js"></script>
-  <script type="module" src="auth.js"></script>
 </head>
 <body>
 
-  <h1 style="text-align:center; padding:40px 20px; background:#004e00; color:white;">
-    Sakinah Initiative – Test Version
-  </h1>
+  <h1>Test Seite</h1>
+  <p>Wenn du unten eine Nachricht siehst, lädt script.js.</p>
 
-  <!-- WICHTIG: Diese IDs müssen exakt so sein, wie script.js sie sucht -->
-  <div style="max-width:900px; margin:30px auto; padding:20px;">
-    
-    <h2>Nächstes Gebet</h2>
-    <p id="next-prayer">Lädt...</p>
-    <p id="next-prayer-countdown" style="font-size:2rem; font-weight:bold;">Lädt...</p>
-    <p id="current-prayer">Aktuelles Gebet: —</p>
+  <div id="test-output"></div>
 
-    <h2 style="margin-top:50px;">Hadith des Tages</h2>
-    <p id="hadith-arabisch" style="font-size:1.6rem; font-family:serif;">Lädt...</p>
-    <p id="hadith-deutsch">Lädt...</p>
-    <small id="hadith-quelle"></small>
-
-    <h2 style="margin-top:50px;">Bittgebet des Tages</h2>
-    <p id="dua-arabisch" style="font-size:1.6rem; font-family:serif;">Lädt...</p>
-    <p id="dua-trans"></p>
-    <p id="dua-deutsch"></p>
-    <small id="dua-quelle"></small>
-
-  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("test-output").innerHTML = 
+        "<strong style='color:green;'>✅ script.js wurde erfolgreich geladen!</strong>";
+      
+      console.log("🚀 script.js wurde geladen und läuft.");
+    });
+  </script>
 
 </body>
 </html>
