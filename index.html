@@ -51,13 +51,16 @@
     <button onclick="fortsetzenLetztesBuch()">📖 Zuletzt gelesenes Buch öffnen</button>
   </div>
 
-  <!-- WICHTIG: Diese Elemente werden von script.js benötigt -->
-  <div style="display:none;">
+  <!-- WICHTIG: Versteckte Elemente, die script.js braucht -->
+  <div style="display: none;">
     <span id="uhrzeit"></span>
     <span id="datum"></span>
     <span id="mekka-uhrzeit"></span>
     <span id="islamisches-datum"></span>
     <span id="stadt-name"></span>
+    <span id="hadith-auth"></span>
+    <div id="stadt-container"></div>
+    <select id="stadt-auswahl"></select>
   </div>
 
   <main>
@@ -68,7 +71,7 @@
         <p id="next-prayer" class="prayer-name">Lädt...</p>
         <p id="next-prayer-countdown" class="countdown-big">Lädt...</p>
       </div>
-      <p id="current-prayer" style="text-align:center; margin-top:20px; font-size:1.3rem;"></p>
+      <p id="current-prayer" style="text-align:center; margin-top:25px; font-size:1.3rem;"></p>
     </section>
 
     <section class="section">
