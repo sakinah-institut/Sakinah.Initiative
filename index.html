@@ -51,41 +51,38 @@
     <button onclick="fortsetzenLetztesBuch()">📖 Zuletzt gelesenes Buch öffnen</button>
   </div>
 
-  <!-- === ALLE ELEMENTE, DIE script.js BENÖTIGT === -->
+  <!-- WICHTIG: Elemente für script.js -->
   <div style="display: none;">
     <span id="uhrzeit"></span>
     <span id="datum"></span>
     <span id="mekka-uhrzeit"></span>
     <span id="islamisches-datum"></span>
     <span id="hadith-auth"></span>
-
-    <!-- Standort & Stadt -->
-    <span id="stadt-name"></span>
-    <div id="stadt-container"></div>
-    <select id="stadt-auswahl"></select>
-
-    <!-- Feiertags-Countdowns -->
-    <span id="ramadan-countdown"></span>
-    <span id="fitr-countdown"></span>
-    <span id="hajj-countdown"></span>
-    <span id="arafah-countdown"></span>
-    <span id="adha-countdown"></span>
-    <span id="neujahr-countdown"></span>
-    <span id="ashura-countdown"></span>
-    <span id="isra-countdown"></span>
   </div>
 
   <main>
 
+    <!-- Gebetszeiten Bereich mit Stadtauswahl -->
     <section id="gebetszeiten" class="section">
       <h2>Nächstes Gebet</h2>
+      
+      <!-- Stadtauswahl -->
+      <div id="stadt-name" style="text-align:center; margin-bottom:15px; font-weight:500;">
+        Standort wird ermittelt...
+      </div>
+      
+      <div id="stadt-container" style="text-align:center; margin-bottom:25px;">
+        <!-- Hier wird das Dropdown von script.js eingefügt -->
+      </div>
+
       <div class="prayer-card">
         <p id="next-prayer" class="prayer-name">Lädt...</p>
         <p id="next-prayer-countdown" class="countdown-big">Lädt...</p>
       </div>
-      <p id="current-prayer" style="text-align:center; margin-top:25px; font-size:1.3rem;"></p>
+      <p id="current-prayer" style="text-align:center; margin-top:20px; font-size:1.3rem;"></p>
     </section>
 
+    <!-- Tägliche Inspiration -->
     <section class="section">
       <h2>Heutige Inspiration</h2>
       <div class="inspiration-grid">
@@ -112,10 +109,6 @@
     <p>&copy; 2026 Sakinah Initiative – Abdul Rahman ibn Walid Itani</p>
     <p><a href="impressum.html">Impressum & Datenschutz</a></p>
   </footer>
-
-</body>
-</html>
-
 
 </body>
 </html>
