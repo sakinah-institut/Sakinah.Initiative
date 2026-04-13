@@ -6,7 +6,7 @@ body {
     background: url('icons/hintergrund.png') center top no-repeat;
     background-size: cover;
     background-attachment: fixed; /* ðŸ”¹ FIX: Hintergrundbild scrollt mit */
-    color: #fff;
+    color: black;
   
 }
 /* Login-Link Styling */
