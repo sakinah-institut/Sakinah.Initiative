@@ -8,46 +8,37 @@
   <link rel="manifest" href="manifest.json" />
   <script defer src="script.js"></script>
   <script type="module" src="auth.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <h1 class="app-title">Sakinah Initiative</h1>
-   <h2 class="app-title">Muslimische Seelsorge, Bildung, Dialog</h2>
-  <a href="index.html">
-    <img src="icons/logo_sakinah.png" alt="App Icon" class="app-icon" />
-  </a>
-
-  <div class="top-info">
-    <h2 class="startseite-text">Startseite</h2>
-    <div class="header-info">
-      <p><span id="datum">Lädt...</span> | <span id="uhrzeit">Berlin: 00:00</span></p>
-      <p><span id="islamisches-datum">Lädt...</span> | <span id="mekka-uhrzeit">Mekka: 00:00</span></p>
-      <p><span id="next-prayer" class="nextprayer-bold">Lädt...</span> <span id="next-prayer-countdown" class="nextprayer-bold"></span></p>
-      <p><span id="current-prayer" class="nextprayer-bold">Lädt...</span> <span id="current-prayer-countdown" class="nextprayer-bold"></span></p>
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-content">
+      <img src="icons/logo_sakinah.png" alt="Sakinah Initiative" class="hero-logo">
+      <h1 class="hero-title">Sakinah Initiative</h1>
+      <p class="hero-subtitle">Ruhe im Herzen • Orientierung im Glauben • Barmherzigkeit in der Begegnung</p>
+      <a href="#next-prayer-section" class="hero-button">Zu den Gebetszeiten</a>
     </div>
-  </div>
+  </header>
 
+  <!-- NAVIGATION -->
   <nav class="menu">
-    <button class="menu-button">☰</button>
+    <button class="menu-button">☰ Menü</button>
     <ul class="menu-list">
-      <li><a href="index.html">Startseite</a></li>
+      <li><a href="index.html">Start</a></li>
       <li><a href="beiträge.html">Beiträge</a></li>
-        <li><a href="Unterrichte.html">Unterrichte</a></li>
-        <li><a href="seelsorge.html">Seelsorge</a></li>
+      <li><a href="unterrichte.html">Unterrichte</a></li>
       <li><a href="bücher.html">Bücher</a></li>
       <li><a href="hadith.html">Hadithsammlung</a></li>
       <li><a href="dua.html">Bittgebete</a></li>
-      <li><a href="gebetszeiten.html">Gebetszeiten</a></li>
-      <li><a href="kalender.html">Islamischer Kalender</a></li>
-      <li><a href="login.html">Login/Registrierung</a></li>
+      <li><a href="seelsorge.html">Seelsorge</a></li>
+      <li><a href="login.html">Login / Registrierung</a></li>
       <li><a href="über-uns.html">Über uns</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="impressum.html">Impressum & Datenschutz</a></li>
-      <li><a href="app-teilen.html">App teilen</a></li>
-      <li><a href="#" id="dark-mode-toggle">Dark Mode</a></li>
     </ul>
   </nav>
 
+  <!-- USER STATUS -->
   <div id="user-status" class="user-info">
     <a href="login.html" id="login-link">🔐 Login</a>
     <div id="user-info" class="hidden">
@@ -57,112 +48,96 @@
     </div>
   </div>
 
+  <!-- FORTSETZEN BUTTON -->
   <div id="fortsetzen-container" class="hidden">
     <button onclick="fortsetzenLetztesBuch()">📖 Zuletzt gelesenes Buch öffnen</button>
   </div>
-    <main>
-    
-                <div class="container">
-    <!-- 📌 Gebetszeiten -->
-    <div class="box">
-        <h2><a href="gebetszeiten.html">Gebetszeiten</a></h2> 
-        <p id="stadt-name"></p>
 
-        <div id="stadt-container">
-            <div class="stadt-dropdown">
-                <select id="stadt-auswahl"></select>
-            </div>
+  <main>
+
+    <!-- NÄCHSTES GEBET – Highlight -->
+    <section id="next-prayer-section" class="section next-prayer-section">
+      <h2>Nächstes Gebet</h2>
+      <div class="prayer-card">
+        <p id="next-prayer" class="prayer-name">Lädt...</p>
+        <p id="next-prayer-countdown" class="countdown-big">00:00:00</p>
+      </div>
+      <div class="current-prayer">
+        <span id="current-prayer">Aktuelles Gebet: —</span>
+        <span id="current-prayer-countdown"></span>
+      </div>
+    </section>
+
+    <!-- TÄGLICHE INSPIRATION -->
+    <section class="section">
+      <h2>Heutige Inspiration</h2>
+      <div class="inspiration-grid">
+        <!-- Hadith des Tages -->
+        <div class="inspiration-card">
+          <h3>Hadith des Tages</h3>
+          <p id="hadith-arabisch" class="arabic">Lädt...</p>
+          <p id="hadith-deutsch">Lädt...</p>
+          <small id="hadith-quelle"></small>
         </div>
-                <table>
-                    <tr><th>Gebet</th><th>Uhrzeit</th><th>Beginnt in (Std:Min):</th></tr>
-                   
-                    <tr><td><strong>Fajr (Fastenbeginn)</strong></td><td id="fajr">00:00</td><td id="fajr-countdown" class="nextprayer-bold">00:00:00</td></tr>
-                    <tr><td>Shuruk</td><td id="shuruk">00:00</td><td id="shuruk-countdown" class="nextprayer-bold">00:00:00</td></tr>
-                    <tr><td><strong>Dhuhr</strong></td><td id="dhuhr">00:00</td><td id="dhuhr-countdown" class="nextprayer-bold">00:00:00</td></tr>
-                    <tr>
-                        <td><strong>Asr</strong></td>
-                        <td id="asr">00:00</td>
-                        <td id="asr-countdown" class="nextprayer-bold">00:00:00</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" class="asr-hinweis">
-                            Bitte beachtet die <a href="beiträge.html#asr-regelungen" class="asr-link">Regelungen zum Ende des Asr-Gebets</a>.
-                        </td>
-                    </tr>
-                    <tr><td><strong>Maghrib (Iftar)</strong></td><td id="maghrib">00:00</td><td id="maghrib-countdown" class="nextprayer-bold">00:00:00</td></tr>
-                    <tr><td><strong>Isha</strong></td><td id="isha">00:00</td><td id="isha-countdown" class="nextprayer-bold">00:00:00</td></tr>
-                    <tr><td>Islamische Mitternacht</td><td id="mitternacht">00:00</td><td id="mitternacht-countdown" class="nextprayer-bold">00:00:00</td></tr>
-                    <td colspan="3" class="asr-hinweis">
-                           Sunnah Gebete:  
-                    </td>
-                    <tr><td>Duha</td><td id="duha">00:00</td><td id="duha-countdown" class="nextprayer-bold">00:00:00</td></tr>
-    <tr><td>Letztes Drittel der Nacht</td><td id="letztes-drittel">00:00</td><td id="letztes-drittel-countdown" class="nextprayer-bold">00:00:00</td></tr>
 
-                </table>
-         </div>
-               
-
-            <!-- 📌 Islamische Feiertage -->
-            <div class="box">
-                <h2>Islamische Tage</h2>
-                <p> Bitte beachtet, dass islamisch der Tag bereits mit Maghrib des Vortages beginnt. Außerdem beginnt der Monat mit der Mondsichtung, weshalb es zu Verschiebungen kommen kann und ALLAH swt weiß es am Besten.</p>
-                <table>
-                    <tr><th>Islamischer Tag</th><th>Datum</th><th>Beginnt in:</th></tr>
-                    <tr><td>Ramadan</td><td>01.03.2025</td><td id="ramadan-countdown" class="nextprayer-bold">Lädt...</td></tr>
-                    <tr><td>Eid al-Fitr</td><td>30.03.2025</td><td id="fitr-countdown" class="nextprayer-bold">Lädt...</td></tr>
-                    <tr><td>Hajj</td><td>04.06.2025</td><td id="hajj-countdown" class="nextprayer-bold">Lädt...</td></tr>
-                    <tr><td>Arafah</td><td>05.06.2025</td><td id="arafah-countdown" class="nextprayer-bold">Lädt...</td></tr>
-                    <tr><td>Eid al-Adha</td><td>06.06.2025</td><td id="adha-countdown" class="nextprayer-bold">Lädt...</td></tr>
-                    <tr><td>Islamisches Neujahr</td><td>26.06.2025</td><td id="neujahr-countdown" class="nextprayer-bold">Lädt...</td></tr>
-                    <tr><td>Ashura</td><td>05.07.2025</td><td id="ashura-countdown" class="nextprayer-bold">Lädt...</td></tr>
-                    <tr><td>Isra' und Mi'raj</td><td>16.01.2026</td><td id="isra-countdown" class="nextprayer-bold">Lädt...</td></tr>
-                </table>
-            </div></div>
-        
-<div class="container">
-  <div class="box" style="width: 80%; margin: 0 auto; text-align: left;">
-    <h2 style="text-align:center;">Über Uns</h2>
-    <p><strong>Die Sakinah Initiative</strong> ist eine Initiative für Seelsorge, islamische Bildung und Dialog. Unser Name steht für Ruhe, inneren Frieden, Geborgenheit und Hoffnung.</p>
-    <p>Wir möchten Menschen begleiten, Wissen zugänglich machen und Brücken in der Gesellschaft bauen.</p>
-    <h3>Seelsorge</h3>
-    <p>Unsere seelsorgerische Arbeit richtet sich an Muslime und auch an Menschen anderer Konfessionen, die Begleitung, ein offenes Ohr und Orientierung suchen.</p>
-    <p><em>„Und sprecht zu den Menschen auf gute Weise.“</em> (2:83)</p>
-    <p><em>„Und Wir haben dich nur als Barmherzigkeit für die Weltenbewohner gesandt.“</em> (21:107)</p>
-    <h3>Bildung</h3>
-    <p>Islamische Bildung vermittelt Orientierung, Werte, Charakterbildung und bewusstes Glaubensverständnis. Wissen schützt vor Unklarheit und stärkt den Menschen.</p>
-    <p><em>„Lies im Namen deines Herrn, Der erschaffen hat.“</em> (96:1)</p>
-    <p><em>„Sind etwa diejenigen gleich, die wissen, und diejenigen, die nicht wissen?“</em> (39:9)</p>
-    <h3>Dialog</h3>
-    <p>Wir fördern respektvollen Austausch, Begegnung und gegenseitiges Verständnis. Der Prophet ﷺ war ein Vorbild im guten Umgang mit Menschen verschiedener Hintergründe.</p>
-    <p><em>„... damit ihr einander kennenlernt.“</em> (49:13)</p>
-    <h3>Gemeinsam gestalten</h3>
-    <p>Ob Teilnehmer, Unterstützer oder Mitwirkender – wir freuen uns über jeden Menschen, der diesen Weg mitgestalten möchte.</p>
-  </div>
-</div>
-
-        <div class="container">
-            <!-- 📌 Hadith & Dua -->
-            <div class="box">
-                <h2>Hadith des Tages</h2>
-                <p id="hadith-arabisch">Lädt...</p>
-                <p id="hadith-deutsch">Lädt...</p>
-                <p><strong>Quelle:</strong> <span id="hadith-quelle">Lädt...</span></p>
-                <p><strong>Authentizität:</strong> <span id="hadith-auth">Lädt...</span></p>
-            </div>
-
-            <div class="box">
-                <h2>Bittgebet des Tages</h2>
-                <p id="dua-arabisch">Lädt...</p>
-                <p id="dua-trans">Lädt...</p>
-                <p id="dua-deutsch">Lädt...</p>
-                <p><strong>Quelle:</strong> <span id="dua-quelle">Lädt...</span></p>
-            </div>
+        <!-- Dua des Tages -->
+        <div class="inspiration-card">
+          <h3>Bittgebet des Tages</h3>
+          <p id="dua-arabisch" class="arabic">Lädt...</p>
+          <p id="dua-trans"></p>
+          <p id="dua-deutsch"></p>
+          <small id="dua-quelle"></small>
         </div>
-    </main>
+      </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 - Abdul Rahman ibn Walid Itani - Sakinah Initiative</p>
-    </footer>
+    <!-- ISLAMISCHE FEIERTAGE -->
+    <section class="section">
+      <h2>Islamische Tage & Feiertage</h2>
+      <div class="feiertage-grid">
+        <div class="feiertag-card">
+          <h4>Ramadan</h4>
+          <p id="ramadan-countdown" class="countdown">Lädt...</p>
+        </div>
+        <div class="feiertag-card">
+          <h4>Eid al-Fitr</h4>
+          <p id="fitr-countdown" class="countdown">Lädt...</p>
+        </div>
+        <div class="feiertag-card">
+          <h4>Eid al-Adha</h4>
+          <p id="adha-countdown" class="countdown">Lädt...</p>
+        </div>
+        <div class="feiertag-card">
+          <h4>Isra' & Mi'raj</h4>
+          <p id="isra-countdown" class="countdown">Lädt...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHNELLZUGRIFF -->
+    <section class="section quick-access">
+      <h2>Schnell zu</h2>
+      <div class="quick-grid">
+        <a href="beiträge.html" class="quick-card">📝 Beiträge lesen</a>
+        <a href="bücher.html" class="quick-card">📚 Bücher entdecken</a>
+        <a href="unterrichte.html" class="quick-card">📖 Unterrichte</a>
+        <a href="seelsorge.html" class="quick-card">❤️ Seelsorge</a>
+      </div>
+    </section>
+
+    <!-- ÜBER UNS TEASER -->
+    <section class="section about-teaser">
+      <h2>Willkommen bei Sakinah</h2>
+      <p>Wir schaffen Räume der inneren Ruhe, vermitteln fundiertes islamisches Wissen und fördern herzlichen Dialog. Ob Seelsorge, Bildung oder Begegnung – hier findest du einen Ort der Sakinah.</p>
+      <a href="über-uns.html" class="more-link">Mehr über uns erfahren →</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Sakinah Initiative – Abdul Rahman ibn Walid Itani</p>
+    <p><a href="impressum.html">Impressum & Datenschutz</a></p>
+  </footer>
 
 </body>
 </html>
