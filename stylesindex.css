@@ -6,12 +6,12 @@ body {
     background: url('icons/hintergrund.png') center top no-repeat;
     background-size: cover;
     background-attachment: fixed; /* ðŸ”¹ FIX: Hintergrundbild scrollt mit */
-    color: black;
+    color: white;
   
 }
 /* Login-Link Styling */
 #login-link {
-  color: black;
+  color: white;
   font-weight: bold;
   text-decoration: none;
 }
@@ -60,12 +60,12 @@ body {
 }
 
 .user-info span {
-  color: black;
+  color: white;
   font-weight: bold;
 }
 
 .user-info a {
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 1.2em;
 }
