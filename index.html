@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <header class="hero">
     <div class="hero-content">
       <img src="icons/logo_sakinah.png" alt="Sakinah Initiative" class="hero-logo">
@@ -33,29 +33,27 @@
       <li><a href="hadith.html">Hadithsammlung</a></li>
       <li><a href="dua.html">Bittgebete</a></li>
       <li><a href="seelsorge.html">Seelsorge</a></li>
-      <li><a href="login.html">Login / Registrierung</a></li>
+      <li><a href="login.html">Login</a></li>
       <li><a href="über-uns.html">Über uns</a></li>
     </ul>
   </nav>
 
-  <!-- USER STATUS -->
   <div id="user-status" class="user-info">
     <a href="login.html" id="login-link">🔐 Login</a>
     <div id="user-info" class="hidden">
       <span id="greeting"></span>
-      <a href="profil.html" title="Profil bearbeiten">👤</a>
+      <a href="profil.html">👤</a>
       <button onclick="logout()">🚪 Logout</button>
     </div>
   </div>
 
-  <!-- FORTSETZEN BUTTON -->
   <div id="fortsetzen-container" class="hidden">
     <button onclick="fortsetzenLetztesBuch()">📖 Zuletzt gelesenes Buch öffnen</button>
   </div>
 
   <main>
 
-    <!-- NÄCHSTES GEBET – Highlight -->
+    <!-- NÄCHSTES GEBET -->
     <section id="next-prayer-section" class="section next-prayer-section">
       <h2>Nächstes Gebet</h2>
       <div class="prayer-card">
@@ -72,7 +70,6 @@
     <section class="section">
       <h2>Heutige Inspiration</h2>
       <div class="inspiration-grid">
-        <!-- Hadith des Tages -->
         <div class="inspiration-card">
           <h3>Hadith des Tages</h3>
           <p id="hadith-arabisch" class="arabic">Lädt...</p>
@@ -80,7 +77,6 @@
           <small id="hadith-quelle"></small>
         </div>
 
-        <!-- Dua des Tages -->
         <div class="inspiration-card">
           <h3>Bittgebet des Tages</h3>
           <p id="dua-arabisch" class="arabic">Lädt...</p>
@@ -118,8 +114,8 @@
     <section class="section quick-access">
       <h2>Schnell zu</h2>
       <div class="quick-grid">
-        <a href="beiträge.html" class="quick-card">📝 Beiträge lesen</a>
-        <a href="bücher.html" class="quick-card">📚 Bücher entdecken</a>
+        <a href="beiträge.html" class="quick-card">📝 Beiträge</a>
+        <a href="bücher.html" class="quick-card">📚 Bücher</a>
         <a href="unterrichte.html" class="quick-card">📖 Unterrichte</a>
         <a href="seelsorge.html" class="quick-card">❤️ Seelsorge</a>
       </div>
@@ -128,7 +124,7 @@
     <!-- ÜBER UNS TEASER -->
     <section class="section about-teaser">
       <h2>Willkommen bei Sakinah</h2>
-      <p>Wir schaffen Räume der inneren Ruhe, vermitteln fundiertes islamisches Wissen und fördern herzlichen Dialog. Ob Seelsorge, Bildung oder Begegnung – hier findest du einen Ort der Sakinah.</p>
+      <p>Wir schaffen Räume der inneren Ruhe, vermitteln fundiertes islamisches Wissen und fördern herzlichen Dialog.</p>
       <a href="über-uns.html" class="more-link">Mehr über uns erfahren →</a>
     </section>
 
