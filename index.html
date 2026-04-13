@@ -3,24 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sakinah Initiative - Test</title>
+  <title>Sakinah Initiative</title>
+  <link rel="stylesheet" href="stylesindex.css" />
+  <link rel="manifest" href="manifest.json" />
   <script defer src="script.js"></script>
+  <script type="module" src="auth.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <h1>Test Seite</h1>
-  <p>Wenn du unten eine Nachricht siehst, lädt script.js.</p>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <img src="icons/logo_sakinah.png" alt="Sakinah Initiative" class="hero-logo">
+      <h1 class="hero-title">Sakinah Initiative</h1>
+      <p class="hero-subtitle">Ruhe im Herzen • Orientierung im Glauben • Barmherzigkeit in der Begegnung</p>
+      <a href="#gebetszeiten" class="hero-button">Zu den Gebetszeiten</a>
+    </div>
+  </header>
 
-  <div id="test-output"></div>
+  <nav class="menu">
+    <button class="menu-button">☰ Menü</button>
+    <ul class="menu-list">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="beiträge.html">Beiträge</a></li>
+      <li><a href="unterrichte.html">Unterrichte</a></li>
+      <li><a href="bücher.html">Bücher</a></li>
+      <li><a href="hadith.html">Hadithsammlung</a></li>
+      <li><a href="dua.html">Bittgebete</a></li>
+      <li><a href="seelsorge.html">Seelsorge</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="über-uns.html">Über uns</a></li>
+    </ul>
+  </nav>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("test-output").innerHTML = 
-        "<strong style='color:green;'>✅ script.js wurde erfolgreich geladen!</strong>";
-      
-      console.log("🚀 script.js wurde geladen und läuft.");
-    });
-  </script>
+  <div id="user-status" class="user-info">
+    <a href="login.html" id="login-link">🔐 Login</a>
+    <div id="user-info" class="hidden">
+      <span id="greeting"></span>
+      <a href="profil.html">👤</a>
+      <button onclick="logout()">🚪 Logout</button>
+    </div>
+  </div>
+
+  <div id="fortsetzen-container" class="hidden">
+    <button onclick="fortsetzenLetztesBuch()">📖 Zuletzt gelesenes Buch öffnen</button>
+  </div>
+
+  <main>
+
+    <!-- Gebetszeiten Bereich -->
+    <section id="gebetszeiten" class="section">
+      <h2>Nächstes Gebet</h2>
+      <div class="prayer-card">
+        <p id="next-prayer" class="prayer-name">Lädt...</p>
+        <p id="next-prayer-countdown" class="countdown-big">Lädt...</p>
+      </div>
+      <p id="current-prayer" style="text-align:center; margin-top:15px; font-size:1.3rem;"></p>
+    </section>
+
+    <!-- Tägliche Inspiration -->
+    <section class="section">
+      <h2>Heutige Inspiration</h2>
+      <div class="inspiration-grid">
+
+        <div class="inspiration-card">
+          <h3>Hadith des Tages</h3>
+          <p id="hadith-arabisch" class="arabic">Lädt...</p>
+          <p id="hadith-deutsch">Lädt...</p>
+          <small id="hadith-quelle"></small>
+        </div>
+
+        <div class="inspiration-card">
+          <h3>Bittgebet des Tages</h3>
+          <p id="dua-arabisch" class="arabic">Lädt...</p>
+          <p id="dua-trans"></p>
+          <p id="dua-deutsch"></p>
+          <small id="dua-quelle"></small>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Feiertage -->
+    <section class="section">
+      <h2>Islamische Tage</h2>
+      <div class="feiertage-grid">
+        <div class="feiertag-card">
+          <h4>Ramadan</h4>
+          <p id="ramadan-countdown" class="countdown">Lädt...</p>
+        </div>
+        <div class="feiertag-card">
+          <h4>Eid al-Fitr</h4>
+          <p id="fitr-countdown" class="countdown">Lädt...</p>
+        </div>
+        <div class="feiertag-card">
+          <h4>Eid al-Adha</h4>
+          <p id="adha-countdown" class="countdown">Lädt...</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Sakinah Initiative – Abdul Rahman ibn Walid Itani</p>
+    <p><a href="impressum.html">Impressum & Datenschutz</a></p>
+  </footer>
 
 </body>
 </html>
