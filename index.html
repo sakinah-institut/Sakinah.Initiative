@@ -51,29 +51,25 @@
     <button onclick="fortsetzenLetztesBuch()">📖 Zuletzt gelesenes Buch öffnen</button>
   </div>
 
-  <!-- WICHTIG: Elemente für script.js -->
+  <!-- Elemente für script.js -->
   <div style="display: none;">
     <span id="uhrzeit"></span>
     <span id="datum"></span>
     <span id="mekka-uhrzeit"></span>
     <span id="islamisches-datum"></span>
     <span id="hadith-auth"></span>
+    <span id="stadt-name"></span>
+    <div id="stadt-container"></div>
+    <select id="stadt-auswahl"></select>
   </div>
 
   <main>
 
-    <!-- Gebetszeiten Bereich mit Stadtauswahl -->
     <section id="gebetszeiten" class="section">
       <h2>Nächstes Gebet</h2>
       
-      <!-- Stadtauswahl -->
-      <div id="stadt-name" style="text-align:center; margin-bottom:15px; font-weight:500;">
-        Standort wird ermittelt...
-      </div>
-      
-      <div id="stadt-container" style="text-align:center; margin-bottom:25px;">
-        <!-- Hier wird das Dropdown von script.js eingefügt -->
-      </div>
+      <div id="stadt-name" style="text-align:center; margin:15px 0; font-weight:500;"></div>
+      <div id="stadt-container" style="text-align:center; margin-bottom:25px;"></div>
 
       <div class="prayer-card">
         <p id="next-prayer" class="prayer-name">Lädt...</p>
@@ -82,7 +78,6 @@
       <p id="current-prayer" style="text-align:center; margin-top:20px; font-size:1.3rem;"></p>
     </section>
 
-    <!-- Tägliche Inspiration -->
     <section class="section">
       <h2>Heutige Inspiration</h2>
       <div class="inspiration-grid">
