@@ -134,3 +134,52 @@ footer {
 .dark-mode .feiertag-card {
   background: #1a2a1a;
 }
+/* ====================== STADTAUSWAHL ====================== */
+.stadt-info {
+  text-align: center;
+  margin: 15px 0 10px;
+  font-weight: 500;
+  color: var(--primary-green);
+}
+
+.stadt-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#stadt-auswahl {
+  padding: 12px 16px;
+  font-size: 1.05rem;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  background: white;
+  min-width: 260px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+}
+
+#stadt-auswahl:focus {
+  border-color: var(--accent-green);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 109, 63, 0.15);
+}
+
+/* ====================== GEBETSZEITEN ====================== */
+.prayer-card {
+  background: white;
+  border-radius: 24px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.09);
+  max-width: 460px;
+  margin: 0 auto 30px;
+}
+
+.current-prayer {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #555;
+  margin-top: 15px;
+}
+
+/* Rest deines bisherigen Styles bleibt gleich */
