@@ -1,4 +1,26 @@
 document.addEventListener("DOMContentLoaded", async () =>{
+    document.addEventListener("DOMContentLoaded", async () => {
+    console.log("🚀 Skript wird geladen...");
+
+    // === NOTFALL-DEAKTIVIERUNG WEGEN RATE LIMIT (429) ===
+    console.warn("⚠️ Rate Limit erreicht (429). Feiertags- und Maghrib-Calls werden vorübergehend deaktiviert.");
+
+    // Deaktiviere die Feiertags-Funktion komplett
+    window.ladeFeiertagsCountdowns = function() {
+        console.log("ladeFeiertagsCountdowns deaktiviert (Rate Limit)");
+    };
+
+    window.holeMaghribZeit = async function() {
+        console.log("holeMaghribZeit deaktiviert wegen Rate Limit");
+        return "18:00"; // einfacher Fallback
+    };
+
+    window.berechneFeiertagsCountdown = function() {
+        console.log("Feiertags-Berechnung deaktiviert");
+    };
+
+    // Optional: Auch die volle Gebetszeiten-Funktion etwas absichern
+    console.log("Warte auf API-Entblockung...");
     console.log("🚀 Skript wird geladen...");
 
     // 📌 Menü-Steuerung
