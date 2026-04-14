@@ -204,28 +204,37 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    // Einfache Gebetszeiten-Funktion (stabilisiert)
-    async function ladeGebetszeiten(stadt) {
-        try {
-            if (countdownInterval) clearInterval(countdownInterval);
+    // Vereinfachte und stabile Gebetszeiten-Funktion
+async function ladeGebetszeiten(stadt) {
+    try {
+        if (countdownInterval) clearInterval(countdownInterval);
 
-            let response = await fetch(`https://api.aladhan.com/v1/timingsByCity?city=${stadt}&country=DE&method=3`);
-            let data = await response.json();
+        console.log(`Lade Gebetszeiten für ${stadt}...`);
 
-            if (!data || !data.data || !data.data.timings) {
-                console.error("❌ API-Fehler bei Gebetszeiten");
-                return;
-            }
+        let response = await fetch(`https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(stadt)}&country=DE&method=3`);
+        let data = await response.json();
 
-            // Einfache Anzeige
-            document.getElementById("next-prayer").textContent = `Nächstes Gebet: ${data.data.timings.Fajr} (Fajr)`;
-            document.getElementById("next-prayer-countdown").textContent = "Berechnung...";
-
-            console.log("✅ Gebetszeiten für", stadt, "geladen");
-        } catch (error) {
-            console.error("❌ Fehler beim Abrufen der Gebetszeiten:", error);
+        if (!data || !data.data || !data.data.timings) {
+            console.error("❌ Keine gültigen Gebetszeiten erhalten");
+            document.getElementById("next-prayer").textContent = "Fehler beim Laden der Gebetszeiten";
+            return;
         }
+
+        const timings = data.data.timings;
+
+        // Einfache Anzeige der nächsten Gebete
+        document.getElementById("next-prayer").textContent = `Nächstes Gebet: Fajr (${timings.Fajr})`;
+        document.getElementById("next-prayer-countdown").textContent = "Berechnung...";
+
+        document.getElementById("current-prayer").textContent = `Aktuelles Gebet: —`;
+
+        console.log("✅ Gebetszeiten erfolgreich geladen für", stadt);
+
+    } catch (error) {
+        console.error("❌ Fehler beim Laden der Gebetszeiten:", error);
+        document.getElementById("next-prayer").textContent = "Gebetszeiten konnten nicht geladen werden";
     }
+}
 
     // Hadith & Dua
     async function ladeHadith() {
