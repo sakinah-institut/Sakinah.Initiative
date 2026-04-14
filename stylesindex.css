@@ -1,97 +1,55 @@
-/* =============================================
-   SAKINAH INITIATIVE – Komplette stylesindex.css
-   Final Version – Ruhig, elegant und modern
-   ============================================= */
-
 :root {
   --primary-green: #004e00;
   --accent-green: #006d3f;
   --light-green: #e8f5e9;
   --beige: #f8f5f0;
-  --soft-gold: #d4af37;
-  --text-dark: #2c2c2c;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background: var(--beige);
-  color: var(--text-dark);
-  line-height: 1.75;
-  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.7;
 }
 
-/* ====================== HERO SECTION ====================== */
+/* HERO */
 .hero {
   background: linear-gradient(rgba(0, 78, 0, 0.68), rgba(0, 78, 0, 0.48)), 
               url('icons/hero-background.jpg') center/cover no-repeat;
   color: white;
   text-align: center;
-  padding: 170px 20px 130px;
-  position: relative;
-}
-
-.hero-content {
-  max-width: 840px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
+  padding: 160px 20px 120px;
 }
 
 .hero-logo {
   width: 190px;
   height: 190px;
-  margin-bottom: 30px;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.45));
+  margin-bottom: 25px;
 }
 
 .hero-title {
-  font-size: 3.25rem;
+  font-size: 3.1rem;
   font-weight: 700;
-  margin-bottom: 18px;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.55);
+  margin-bottom: 16px;
 }
 
 .hero-subtitle {
-  font-size: 1.42rem;
-  max-width: 720px;
-  margin: 0 auto 45px;
-  opacity: 0.95;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
+  font-size: 1.38rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
 }
 
 .hero-button {
   background: white;
   color: var(--primary-green);
-  padding: 17px 42px;
+  padding: 16px 40px;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 1.22rem;
+  font-size: 1.2rem;
   text-decoration: none;
-  display: inline-block;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
-  transition: all 0.3s ease;
 }
 
-.hero-button:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.38);
-}
-
-/* ====================== NAVIGATION ====================== */
-.menu {
-  position: sticky;
-  top: 0;
-  background: rgba(255, 255, 255, 0.97);
-  z-index: 100;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-}
-
+/* NAVIGATION */
 .menu-button {
   background: var(--primary-green);
   color: white;
@@ -100,61 +58,16 @@ body {
   border: none;
   width: 100%;
   text-align: left;
-  cursor: pointer;
 }
 
-.menu-list {
-  display: none;
-  list-style: none;
-  background: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+.menu-list a {
+  padding: 16px 22px;
+  color: #333;
 }
 
-.menu-list.show {
-  display: block;
-}
-
-.menu-list li a {
-  display: block;
-  padding: 17px 24px;
-  color: var(--text-dark);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.menu-list li a:hover {
-  background: var(--light-green);
-  color: var(--accent-green);
-}
-
-/* ====================== USER STATUS ====================== */
-.user-info {
-  position: absolute;
-  top: 22px;
-  right: 22px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  z-index: 110;
-}
-
-.user-info a, .user-info button {
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  background: none;
-  border: none;
-  font-size: 1.15rem;
-  cursor: pointer;
-}
-
-.hidden {
-  display: none !important;
-}
-
-/* ====================== MAIN SECTIONS ====================== */
+/* SECTIONS */
 .section {
-  padding: 80px 20px;
+  padding: 70px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -162,200 +75,62 @@ body {
 h2 {
   text-align: center;
   color: var(--primary-green);
-  font-size: 2.25rem;
-  margin-bottom: 55px;
-  font-weight: 600;
-}
-
-/* Nächstes Gebet Highlight */
-.next-prayer-section {
-  background: white;
-  padding-top: 40px;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
 }
 
 .prayer-card {
   background: white;
-  border-radius: 26px;
-  padding: 45px 35px;
+  border-radius: 24px;
+  padding: 40px 30px;
   text-align: center;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.09);
-  max-width: 480px;
-  margin: 0 auto 35px;
-}
-
-.prayer-name {
-  font-size: 1.65rem;
-  color: var(--accent-green);
-  margin-bottom: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  max-width: 460px;
+  margin: 0 auto 30px;
 }
 
 .countdown-big {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 700;
-  color: var(--primary-green);
-  margin: 10px 0 20px;
+  color: var(--accent-green);
 }
 
-.current-prayer {
-  font-size: 1.3rem;
-  color: #555;
-}
-
-/* Tägliche Inspiration */
-.inspiration-grid {
+.inspiration-grid, .feiertage-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
 }
 
-.inspiration-card {
+.inspiration-card, .feiertag-card {
   background: white;
-  padding: 36px;
-  border-radius: 22px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-}
-
-.inspiration-card h3 {
-  color: var(--primary-green);
-  margin-bottom: 22px;
-  font-size: 1.5rem;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .arabic {
   font-family: 'Amiri', serif;
-  font-size: 1.75rem;
+  font-size: 1.7rem;
   line-height: 2;
-  color: #002b00;
-  margin-bottom: 18px;
+  color: #003300;
 }
 
-/* Feiertage */
-.feiertage-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 26px;
-}
-
-.feiertag-card {
-  background: white;
-  padding: 28px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-}
-
-.feiertag-card h4 {
-  color: var(--accent-green);
-  margin-bottom: 14px;
-}
-
-/* Schnellzugriff */
-.quick-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-}
-
-.quick-card {
-  background: white;
-  padding: 50px 30px;
-  border-radius: 22px;
-  text-align: center;
-  font-size: 1.38rem;
-  font-weight: 600;
-  color: var(--primary-green);
-  text-decoration: none;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.quick-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
-}
-
-/* Über uns Teaser */
-.about-teaser {
-  background: var(--light-green);
-  text-align: center;
-}
-
-.about-teaser p {
-  max-width: 740px;
-  margin: 0 auto 35px;
-  font-size: 1.18rem;
-}
-
-.more-link {
-  color: var(--accent-green);
-  font-weight: 600;
-  font-size: 1.25rem;
-  text-decoration: none;
-}
-
-.more-link:hover {
-  text-decoration: underline;
-}
-
-/* ====================== FOOTER ====================== */
+/* Footer */
 footer {
   background: var(--primary-green);
   color: white;
   text-align: center;
-  padding: 50px 20px 40px;
-  margin-top: 90px;
+  padding: 45px 20px;
 }
 
-footer p {
-  margin-bottom: 10px;
-}
-
-footer a {
-  color: #a8e6a8;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* ====================== DARK MODE ====================== */
+/* Dark Mode */
 .dark-mode {
   background: #0f1a0f;
-  color: #e0e0e0;
-}
-
-.dark-mode .hero {
-  background: linear-gradient(rgba(0, 40, 0, 0.82), rgba(0, 40, 0, 0.62)), 
-              url('icons/hero-background.jpg') center/cover no-repeat;
+  color: #ddd;
 }
 
 .dark-mode .prayer-card,
 .dark-mode .inspiration-card,
-.dark-mode .feiertag-card,
-.dark-mode .quick-card {
+.dark-mode .feiertag-card {
   background: #1a2a1a;
-  color: #eee;
-}
-
-.dark-mode h2,
-.dark-mode .prayer-name,
-.dark-mode .countdown-big {
-  color: #a8e6a8;
-}
-
-/* ====================== RESPONSIVE ====================== */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.65rem;
-  }
-  .hero-subtitle {
-    font-size: 1.28rem;
-  }
-  .hero {
-    padding: 130px 15px 100px;
-  }
-  .section {
-    padding: 60px 15px;
-  }
 }
