@@ -2,21 +2,20 @@
   --primary-green: #004e00;
   --accent-green: #006d3f;
   --light-green: #e8f5e9;
-  --beige: #f8f5f0;
 }
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: var(--beige);
+  background: #f8f5f0;
   color: #333;
   margin: 0;
 }
 
-/* ====================== TOP AUTH BAR ====================== */
+/* Top Auth Bar */
 .top-auth-bar {
   background: white;
-  padding: 14px 25px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  padding: 12px 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 300;
@@ -27,14 +26,13 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
   gap: 15px;
 }
 
 .login-btn {
   background: var(--primary-green);
   color: white;
-  padding: 11px 28px;
+  padding: 10px 26px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
@@ -44,63 +42,23 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex-wrap: wrap;
 }
 
-.greeting {
-  font-weight: 600;
-  color: var(--primary-green);
-  font-size: 1.15rem;
-}
-
-.logout-btn, .book-btn {
-  padding: 10px 22px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
+.greeting { font-weight: 600; color: var(--primary-green); }
 .logout-btn { background: #c62828; color: white; }
 .book-btn   { background: var(--accent-green); color: white; }
 
-/* ====================== HERO ====================== */
+/* Hero */
 .hero {
-  background: linear-gradient(rgba(0, 78, 0, 0.68), rgba(0, 78, 0, 0.48)), 
-              url('icons/hero-background.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0,78,0,0.68), rgba(0,78,0,0.48)), url('icons/hero-background.jpg') center/cover no-repeat;
   color: white;
   padding: 130px 20px 100px;
   text-align: center;
 }
 
-.hero-logo {
-  width: 190px;
-  height: 190px;
-  margin: 0 auto 25px;
-  display: block;
-}
-
-.hero-title {
-  font-size: 2.9rem;
-  font-weight: 700;
-}
-
-.hero-subtitle {
-  font-size: 1.35rem;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.hero-button {
-  background: white;
-  color: var(--primary-green);
-  padding: 16px 42px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 25px;
-}
+.hero-logo { width: 190px; height: 190px; margin-bottom: 20px; }
+.hero-title { font-size: 2.9rem; font-weight: 700; }
+.hero-subtitle { font-size: 1.35rem; max-width: 720px; margin: 0 auto; }
 
 /* Navigation */
 .menu-button {
@@ -110,51 +68,52 @@ body {
   padding: 14px 20px;
   border: none;
   width: 100%;
-  text-align: left;
 }
 
 .menu-list { display: none; list-style: none; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.12); }
 .menu-list.show { display: block; }
-.menu-list a { display: block; padding: 16px 25px; color: #333; text-decoration: none; }
+.menu-list a { display: block; padding: 16px 25px; color: #333; }
 
-/* Main Content */
+/* Main */
 main { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
-.section h2 { color: var(--primary-green); text-align: center; margin-bottom: 28px; font-size: 1.95rem; }
+.section h2 { color: var(--primary-green); text-align: center; margin-bottom: 25px; font-size: 1.9rem; }
 
 .info-card {
   background: white;
-  padding: 40px;
-  border-radius: 24px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   text-align: center;
-  max-width: 820px;
-  margin: 0 auto 60px;
+  max-width: 800px;
+  margin: 0 auto 50px;
 }
 
+/* Gebetszeiten */
 .city-select {
-  padding: 13px 26px;
+  padding: 12px 24px;
   font-size: 1.1rem;
   border: 2px solid #ccc;
-  border-radius: 14px;
+  border-radius: 12px;
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto 30px;
+  max-width: 380px;
+  margin: 15px auto 25px;
   display: block;
 }
 
 .prayer-card {
   background: white;
-  padding: 28px;
-  border-radius: 24px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 table { width: 100%; border-collapse: collapse; }
-th, td { padding: 15px 12px; text-align: center; border-bottom: 1px solid #eee; }
+th, td { padding: 14px; text-align: center; border-bottom: 1px solid #eee; }
 th { background: var(--light-green); }
 .countdown { font-weight: 600; color: var(--accent-green); }
 
+/* Feiertage */
 .feiertage-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -163,14 +122,15 @@ th { background: var(--light-green); }
 
 .feiertag-card {
   background: white;
-  padding: 24px 18px;
-  border-radius: 20px;
+  padding: 22px;
+  border-radius: 18px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.09);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
-.feiertag-card h4 { color: var(--primary-green); margin-bottom: 12px; }
+.feiertag-card h4 { color: var(--primary-green); }
 
+/* Inspiration */
 .inspiration-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -179,15 +139,15 @@ th { background: var(--light-green); }
 
 .inspiration-card {
   background: white;
-  padding: 32px;
-  border-radius: 22px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.09);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.09);
 }
 
 .arabic {
   font-family: 'Amiri', serif;
-  font-size: 1.78rem;
-  line-height: 2.2;
+  font-size: 1.75rem;
+  line-height: 2.1;
   color: #003300;
 }
 
@@ -198,10 +158,3 @@ footer {
   padding: 45px 20px;
   margin-top: 80px;
 }
-
-/* Dark Mode */
-.dark-mode { background: #0a140a; color: #ddd; }
-.dark-mode .info-card,
-.dark-mode .prayer-card,
-.dark-mode .feiertag-card,
-.dark-mode .inspiration-card { background: #1a2a1a; }
