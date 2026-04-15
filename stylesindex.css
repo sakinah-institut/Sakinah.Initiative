@@ -1,6 +1,6 @@
 /* =============================================
    SAKINAH INITIATIVE - Final stylesindex.css
-   Angepasst an deine aktuelle index.html
+   Moderne, ruhige und übersichtliche Version
    ============================================= */
 
 :root {
@@ -8,6 +8,7 @@
   --accent-green: #006d3f;
   --light-green: #e8f5e9;
   --beige: #f8f5f0;
+  --soft-gold: #d4af37;
 }
 
 * {
@@ -23,58 +24,116 @@ body {
   line-height: 1.7;
 }
 
+/* ====================== TOP HEADER (Login-Bereich) ====================== */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.small-logo {
+  height: 48px;
+}
+
+.small-logo img {
+  height: 100%;
+}
+
+.user-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.login-btn {
+  background: var(--primary-green);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logout-btn {
+  background: #c62828;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.profile-icon {
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
 /* ====================== HERO ====================== */
 .hero {
-  background: linear-gradient(rgba(0, 78, 0, 0.68), rgba(0, 78, 0, 0.48)), 
+  background: linear-gradient(rgba(0, 78, 0, 0.65), rgba(0, 78, 0, 0.45)), 
               url('icons/hero-background.jpg') center/cover no-repeat;
   color: white;
   text-align: center;
-  padding: 160px 20px 120px;
+  padding: 140px 20px 100px;
 }
 
 .hero-logo {
   width: 190px;
   height: 190px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .hero-title {
-  font-size: 3.1rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .hero-subtitle {
-  font-size: 1.38rem;
-  max-width: 700px;
-  margin: 0 auto 40px;
+  font-size: 1.35rem;
+  max-width: 720px;
+  margin: 0 auto 35px;
+  opacity: 0.95;
 }
 
 .hero-button {
   background: white;
   color: var(--primary-green);
-  padding: 16px 40px;
+  padding: 16px 42px;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   text-decoration: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 /* ====================== NAVIGATION ====================== */
 .menu {
-  position: sticky;
-  top: 0;
-  background: rgba(255,255,255,0.97);
-  z-index: 100;
+  background: white;
   box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 60px;
+  z-index: 150;
 }
 
 .menu-button {
   background: var(--primary-green);
   color: white;
-  font-size: 1.5rem;
-  padding: 16px 20px;
+  font-size: 1.6rem;
+  padding: 14px 20px;
   border: none;
   width: 100%;
   text-align: left;
@@ -85,10 +144,7 @@ body {
   display: none;
   list-style: none;
   background: white;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-  position: absolute;
-  width: 100%;
-  z-index: 101;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 .menu-list.show {
@@ -96,12 +152,12 @@ body {
 }
 
 .menu-list li {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .menu-list a {
   display: block;
-  padding: 16px 22px;
+  padding: 16px 25px;
   color: #333;
   text-decoration: none;
   font-weight: 500;
@@ -112,130 +168,172 @@ body {
   color: var(--accent-green);
 }
 
-/* ====================== STADTAUSWAHL ====================== */
-#stadt-name {
+/* ====================== FORTSETZEN BUTTON ====================== */
+.fortsetzen-btn {
   text-align: center;
-  margin: 15px 0 10px;
-  font-weight: 500;
-  color: var(--primary-green);
+  padding: 15px 20px;
+  background: var(--light-green);
 }
 
-#stadt-container {
+.fortsetzen-btn button {
+  background: var(--accent-green);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* ====================== MAIN CONTENT ====================== */
+main {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.section h2 {
+  color: var(--primary-green);
+  margin-bottom: 20px;
+  font-size: 1.85rem;
   text-align: center;
-  margin-bottom: 30px;
+}
+
+/* Info Box über Sakinah */
+.info-section {
+  margin-bottom: 50px;
+}
+
+.info-box {
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-box h2 {
+  color: var(--primary-green);
+  margin-bottom: 18px;
+}
+
+/* Gebetszeiten */
+#gebetszeiten .stadt-dropdown {
+  text-align: center;
+  margin: 15px 0 25px;
 }
 
 #stadt-auswahl {
-  padding: 12px 20px;
+  padding: 12px 24px;
   font-size: 1.1rem;
   border: 2px solid #ccc;
   border-radius: 12px;
-  background: white;
-  min-width: 280px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-#stadt-auswahl:focus {
-  border-color: var(--accent-green);
-  outline: none;
-}
-
-/* ====================== GEBETSZEITEN ====================== */
-.prayer-card {
-  background: white;
-  border-radius: 24px;
-  padding: 40px 30px;
-  text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-  max-width: 460px;
-  margin: 0 auto 30px;
-}
-
-.countdown-big {
-  font-size: 3.2rem;
-  font-weight: 700;
-  color: var(--accent-green);
-}
-
-/* ====================== BOXEN & INHALT ====================== */
-.container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 20px;
-  gap: 25px;
-}
-
-.box {
-  background: white;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  flex: 1;
   min-width: 300px;
+}
+
+.prayer-table-container {
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.07);
 }
 
 th, td {
-  padding: 12px;
-  border: 1px solid #ddd;
+  padding: 14px 12px;
   text-align: center;
+  border-bottom: 1px solid #eee;
 }
 
 th {
   background: var(--light-green);
+  font-weight: 600;
 }
 
-/* ====================== INSPIRATION ====================== */
+.countdown {
+  font-weight: 600;
+  color: var(--accent-green);
+}
+
+/* Feiertage Grid */
+.feiertage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.feiertag-card {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+}
+
+.feiertag-card h4 {
+  color: var(--primary-green);
+  margin-bottom: 10px;
+}
+
+/* Inspiration Grid */
 .inspiration-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 25px;
 }
 
 .inspiration-card {
   background: white;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .arabic {
   font-family: 'Amiri', serif;
-  font-size: 1.65rem;
-  line-height: 2;
+  font-size: 1.75rem;
+  line-height: 2.1;
   color: #003300;
+  margin-bottom: 12px;
 }
 
-/* ====================== FOOTER ====================== */
+/* Footer */
 footer {
   background: var(--primary-green);
   color: white;
   text-align: center;
-  padding: 45px 20px;
-  margin-top: 60px;
+  padding: 40px 20px;
+  margin-top: 80px;
 }
 
 /* ====================== DARK MODE ====================== */
 .dark-mode {
-  background: #0f1a0f;
+  background: #0a140a;
   color: #ddd;
 }
 
 .dark-mode .box,
-.dark-mode .prayer-card,
-.dark-mode .inspiration-card {
+.dark-mode .info-box,
+.dark-mode .inspiration-card,
+.dark-mode .feiertag-card,
+.dark-mode table {
   background: #1a2a1a;
 }
 
 /* ====================== RESPONSIVE ====================== */
 @media (max-width: 768px) {
-  .hero-title { font-size: 2.6rem; }
-  .hero { padding: 130px 15px 100px; }
-  .container { flex-direction: column; }
+  .hero-title { font-size: 2.5rem; }
+  .hero { padding: 110px 15px 80px; }
+  .info-box { padding: 25px; }
 }
