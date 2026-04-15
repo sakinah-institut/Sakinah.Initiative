@@ -53,7 +53,7 @@
     <button onclick="fortsetzenLetztesBuch()">📖 Zuletzt gelesenes Buch öffnen</button>
   </div>
 
-  <!-- Versteckte Elemente für script.js -->
+  <!-- ALLE ELEMENTE FÜR DEIN SCRIPT -->
   <div style="display: none;">
     <span id="uhrzeit"></span>
     <span id="datum"></span>
@@ -69,7 +69,7 @@
 
     <div class="container">
 
-      <!-- Gebetszeiten Box -->
+      <!-- Gebetszeiten Box (mit allen Original-IDs) -->
       <div class="box">
         <h2>Gebetszeiten</h2>
         <p id="stadt-name"></p>
@@ -82,12 +82,19 @@
 
         <table>
           <tr><th>Gebet</th><th>Uhrzeit</th><th>Beginnt in</th></tr>
-          <tr><td><strong>Fajr</strong></td><td id="fajr">00:00</td><td id="fajr-countdown" class="nextprayer-bold"></td></tr>
-          <tr><td>Shuruk</td><td id="shuruk">00:00</td><td id="shuruk-countdown" class="nextprayer-bold"></td></tr>
-          <tr><td><strong>Dhuhr</strong></td><td id="dhuhr">00:00</td><td id="dhuhr-countdown" class="nextprayer-bold"></td></tr>
-          <tr><td><strong>Asr</strong></td><td id="asr">00:00</td><td id="asr-countdown" class="nextprayer-bold"></td></tr>
-          <tr><td><strong>Maghrib</strong></td><td id="maghrib">00:00</td><td id="maghrib-countdown" class="nextprayer-bold"></td></tr>
-          <tr><td><strong>Isha</strong></td><td id="isha">00:00</td><td id="isha-countdown" class="nextprayer-bold"></td></tr>
+          <tr><td><strong>Fajr (Fastenbeginn)</strong></td><td id="fajr">00:00</td><td id="fajr-countdown" class="nextprayer-bold">00:00:00</td></tr>
+          <tr><td>Shuruk</td><td id="shuruk">00:00</td><td id="shuruk-countdown" class="nextprayer-bold">00:00:00</td></tr>
+          <tr><td><strong>Dhuhr</strong></td><td id="dhuhr">00:00</td><td id="dhuhr-countdown" class="nextprayer-bold">00:00:00</td></tr>
+          <tr><td><strong>Asr</strong></td><td id="asr">00:00</td><td id="asr-countdown" class="nextprayer-bold">00:00:00</td></tr>
+          <tr><td colspan="3" class="asr-hinweis">
+            Bitte beachtet die <a href="beiträge.html#asr-regelungen" class="asr-link">Regelungen zum Ende des Asr-Gebets</a>.
+          </td></tr>
+          <tr><td><strong>Maghrib (Iftar)</strong></td><td id="maghrib">00:00</td><td id="maghrib-countdown" class="nextprayer-bold">00:00:00</td></tr>
+          <tr><td><strong>Isha</strong></td><td id="isha">00:00</td><td id="isha-countdown" class="nextprayer-bold">00:00:00</td></tr>
+          <tr><td>Islamische Mitternacht</td><td id="mitternacht">00:00</td><td id="mitternacht-countdown" class="nextprayer-bold">00:00:00</td></tr>
+          <tr><td colspan="3" class="asr-hinweis">Sunnah Gebete:</td></tr>
+          <tr><td>Duha</td><td id="duha">00:00</td><td id="duha-countdown" class="nextprayer-bold">00:00:00</td></tr>
+          <tr><td>Letztes Drittel der Nacht</td><td id="letztes-drittel">00:00</td><td id="letztes-drittel-countdown" class="nextprayer-bold">00:00:00</td></tr>
         </table>
       </div>
 
@@ -104,7 +111,7 @@
           <tr><td>Eid al-Adha</td><td>06.06.2025</td><td id="adha-countdown" class="nextprayer-bold">Lädt...</td></tr>
           <tr><td>Neujahr</td><td>26.06.2025</td><td id="neujahr-countdown" class="nextprayer-bold">Lädt...</td></tr>
           <tr><td>Ashura</td><td>05.07.2025</td><td id="ashura-countdown" class="nextprayer-bold">Lädt...</td></tr>
-          <tr><td>Isra' & Mi'raj</td><td>16.01.2026</td><td id="isra-countdown" class="nextprayer-bold">Lädt...</td></tr>
+          <tr><td>Isra' und Mi'raj</td><td>16.01.2026</td><td id="isra-countdown" class="nextprayer-bold">Lädt...</td></tr>
         </table>
       </div>
     </div>
@@ -113,7 +120,7 @@
     <div class="container">
       <div class="box">
         <h2>Hadith des Tages</h2>
-        <p id="hadith-arabisch" class="arabic">Lädt...</p>
+        <p id="hadith-arabisch">Lädt...</p>
         <p id="hadith-deutsch">Lädt...</p>
         <p><strong>Quelle:</strong> <span id="hadith-quelle">Lädt...</span></p>
         <p><strong>Authentizität:</strong> <span id="hadith-auth">Lädt...</span></p>
@@ -121,7 +128,7 @@
 
       <div class="box">
         <h2>Bittgebet des Tages</h2>
-        <p id="dua-arabisch" class="arabic">Lädt...</p>
+        <p id="dua-arabisch">Lädt...</p>
         <p id="dua-trans">Lädt...</p>
         <p id="dua-deutsch">Lädt...</p>
         <p><strong>Quelle:</strong> <span id="dua-quelle">Lädt...</span></p>
@@ -133,9 +140,6 @@
   <footer>
     <p>&copy; 2026 Sakinah Initiative – Abdul Rahman ibn Walid Itani</p>
   </footer>
-
-</body>
-</html>
 
 </body>
 </html>
