@@ -12,28 +12,29 @@
 </head>
 <body>
 
-  <!-- HERO mit Login rechts im grünen Bereich -->
-  <header class="hero">
-    <div class="hero-content">
-      <div class="hero-left">
-        <img src="icons/logo_sakinah.png" alt="Sakinah Initiative" class="hero-logo">
-        <h1 class="hero-title">Sakinah Initiative</h1>
-        <p class="hero-subtitle">Ruhe im Herzen • Orientierung im Glauben • Barmherzigkeit in der Begegnung</p>
-      </div>
-
-      <!-- Login-Bereich direkt im Hero -->
-      <div id="user-status" class="hero-auth">
-        <a href="login.html" id="login-link" class="login-btn">🔐 Login</a>
-        
-        <div id="user-info" class="logged-in hidden">
-          <span id="greeting" class="greeting"></span>
-          <a href="profil.html" class="profile-link">👤 Profil</a>
-          <button onclick="logout()" class="logout-btn">🚪 Logout</button>
-          <button onclick="fortsetzenLetztesBuch()" class="book-btn">📖 Zuletzt gelesen</button>
-        </div>
+  <!-- GANZ OBEN: Login-Bereich -->
+  <header class="top-auth-bar">
+    <div class="top-auth-content">
+      <a href="login.html" id="login-link" class="login-btn">🔐 Login</a>
+      
+      <div id="user-info" class="logged-in hidden">
+        <span id="greeting" class="greeting">Assalamu alaikum ...</span>
+        <a href="profil.html" class="profile-link">👤 Profil</a>
+        <button onclick="logout()" class="logout-btn">🚪 Logout</button>
+        <button onclick="fortsetzenLetztesBuch()" class="book-btn">📖 Zuletzt gelesen</button>
       </div>
     </div>
   </header>
+
+  <!-- HERO (ohne Login) -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="icons/logo_sakinah.png" alt="Sakinah Initiative" class="hero-logo">
+      <h1 class="hero-title">Sakinah Initiative</h1>
+      <p class="hero-subtitle">Ruhe im Herzen • Orientierung im Glauben • Barmherzigkeit in der Begegnung</p>
+      <a href="#gebetszeiten" class="hero-button">Zu den Gebetszeiten</a>
+    </div>
+  </section>
 
   <!-- NAVIGATION -->
   <nav class="menu">
@@ -51,7 +52,7 @@
     </ul>
   </nav>
 
-  <!-- VERSTECKTE ELEMENTE FÜR DEIN SCRIPT -->
+  <!-- VERSTECKTE ELEMENTE FÜR SCRIPT -->
   <div style="display: none;">
     <span id="uhrzeit"></span>
     <span id="datum"></span>
@@ -64,7 +65,6 @@
   </div>
 
   <main>
-
     <!-- Kurze Info -->
     <section class="info-section">
       <div class="info-card">
