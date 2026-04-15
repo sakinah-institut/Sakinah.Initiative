@@ -1,4 +1,71 @@
-:root {
+/* ====================== TOP AUTH BAR - GANZ OBEN ====================== */
+
+
+.top-auth-bar {
+  background: white;
+  padding: 12px 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 300;
+}
+
+.top-auth-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Login Button - nur wenn nicht eingeloggt */
+.login-btn {
+  background: var(--primary-green);
+  color: white;
+  padding: 10px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Eingeloggt-Bereich - nur wenn eingeloggt */
+.logged-in {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.greeting {
+  font-weight: 600;
+  color: var(--primary-green);
+  font-size: 1.1rem;
+}
+
+.logout-btn, .book-btn {
+  padding: 9px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.logout-btn { background: #c62828; color: white; }
+.book-btn   { background: var(--accent-green); color: white; }
+
+.profile-link {
+  font-size: 1.7rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .top-auth-content {
+    justify-content: center;
+  }
+}:root {
   --primary-green: #004e00;
   --accent-green: #006d3f;
   --light-green: #e8f5e9;
