@@ -12,14 +12,14 @@ body {
   margin: 0;
 }
 
-/* ====================== HERO (mit Login rechts) ====================== */
+/* ====================== HERO mit Login rechts ====================== */
 .hero {
-  background: linear-gradient(rgba(0, 78, 0, 0.65), rgba(0, 78, 0, 0.45)), 
+  background: linear-gradient(rgba(0, 78, 0, 0.68), rgba(0, 78, 0, 0.48)), 
               url('icons/hero-background.jpg') center/cover no-repeat;
   color: white;
-  padding: 140px 20px 100px;
+  padding: 130px 20px 110px;
   position: relative;
-  min-height: 480px;
+  min-height: 460px;
 }
 
 .hero-content {
@@ -34,62 +34,65 @@ body {
 
 .hero-left {
   flex: 1;
+  min-width: 300px;
 }
 
 .hero-logo {
-  width: 180px;
-  height: 180px;
+  width: 185px;
+  height: 185px;
   margin-bottom: 20px;
 }
 
 .hero-title {
-  font-size: 2.9rem;
+  font-size: 2.85rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .hero-subtitle {
   font-size: 1.35rem;
   max-width: 620px;
+  opacity: 0.95;
 }
 
-/* Login-Bereich im Hero */
+/* Login-Bereich direkt im Hero */
 .hero-auth {
   background: rgba(255,255,255,0.95);
   color: #333;
-  padding: 20px 26px;
+  padding: 22px 28px;
   border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  min-width: 260px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+  min-width: 270px;
   text-align: center;
-  margin-top: 20px;
 }
 
 .login-btn {
   background: var(--primary-green);
   color: white;
-  padding: 12px 28px;
+  padding: 12px 30px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
   width: 100%;
+  margin-bottom: 8px;
 }
 
 .logged-in {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .greeting {
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--primary-green);
+  margin-bottom: 6px;
 }
 
 .logout-btn, .book-btn {
-  padding: 10px 20px;
+  padding: 10px 22px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -100,11 +103,16 @@ body {
 .book-btn   { background: var(--accent-green); color: white; }
 
 .profile-link {
-  font-size: 1.8rem;
+  font-size: 1.75rem;
   text-decoration: none;
 }
 
 /* ====================== NAVIGATION ====================== */
+.menu {
+  background: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
 .menu-button {
   background: var(--primary-green);
   color: white;
@@ -134,7 +142,7 @@ body {
   text-decoration: none;
 }
 
-/* ====================== MAIN CONTENT ====================== */
+/* ====================== MAIN ====================== */
 main {
   max-width: 1100px;
   margin: 0 auto;
@@ -150,11 +158,11 @@ main {
 
 .info-card {
   background: white;
-  padding: 35px;
+  padding: 35px 40px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   text-align: center;
-  max-width: 820px;
+  max-width: 800px;
   margin: 0 auto 50px;
 }
 
@@ -166,7 +174,7 @@ main {
   border-radius: 12px;
   width: 100%;
   max-width: 380px;
-  margin: 0 auto 25px;
+  margin: 15px auto 25px;
   display: block;
 }
 
@@ -238,6 +246,15 @@ th {
   color: #003300;
 }
 
+/* Footer */
+footer {
+  background: var(--primary-green);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 80px;
+}
+
 /* Dark Mode */
 .dark-mode {
   background: #0a140a;
@@ -254,6 +271,6 @@ th {
 /* Responsive */
 @media (max-width: 768px) {
   .hero-content { justify-content: center; text-align: center; }
-  .hero-auth { margin-top: 30px; }
+  .hero-auth { margin-top: 30px; width: 100%; }
   .hero-title { font-size: 2.4rem; }
 }
