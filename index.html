@@ -52,34 +52,27 @@
     </ul>
   </nav>
 
-  <!-- VERSTECKTE ELEMENTE FÜR SCRIPT -->
+  <!-- VERSTECKTE ELEMENTE FÜR DEIN ALTES SCRIPT -->
   <div style="display: none;">
     <span id="uhrzeit"></span>
     <span id="datum"></span>
     <span id="mekka-uhrzeit"></span>
     <span id="islamisches-datum"></span>
     <span id="hadith-auth"></span>
-    <span id="stadt-name"></span>
-    <div id="stadt-container"></div>
-    <select id="stadt-auswahl"></select>
   </div>
 
   <main>
-    <!-- Kurze Info -->
-    <section class="info-section">
-      <div class="info-card">
-        <h2>Willkommen bei der Sakinah Initiative</h2>
-        <p>Wir begleiten Menschen mit muslimischer Seelsorge, islamischer Bildung und respektvollem Dialog. Unser Name „Sakinah“ steht für innere Ruhe, Geborgenheit und Hoffnung.</p>
-      </div>
-    </section>
 
     <!-- Gebetszeiten -->
     <section id="gebetszeiten" class="section">
       <h2>Gebetszeiten</h2>
-      <p id="stadt-name"></p>
-      <div id="stadt-container">
+      
+      <p id="stadt-name" style="text-align:center; font-weight:500; margin:15px 0;"></p>
+      
+      <div id="stadt-container" style="text-align:center; margin-bottom:25px;">
         <select id="stadt-auswahl" class="city-select"></select>
       </div>
+
       <div class="prayer-card">
         <table>
           <tr><th>Gebet</th><th>Uhrzeit</th><th>Beginnt in</th></tr>
@@ -93,7 +86,7 @@
       </div>
     </section>
 
-    <!-- Feiertage -->
+    <!-- Islamische Tage / Feiertage -->
     <section class="section">
       <h2>Islamische Tage</h2>
       <div class="feiertage-grid">
@@ -126,6 +119,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
