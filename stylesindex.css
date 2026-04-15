@@ -5,20 +5,14 @@
   --beige: #f8f5f0;
 }
 
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: var(--beige);
-  color: #333;
-  margin: 0;
-}
+body { font-family: 'Inter', system-ui, sans-serif; background: var(--beige); color: #333; margin: 0; }
 
-/* ====================== HERO mit Login rechts ====================== */
+/* HERO */
 .hero {
   background: linear-gradient(rgba(0, 78, 0, 0.68), rgba(0, 78, 0, 0.48)), 
               url('icons/hero-background.jpg') center/cover no-repeat;
   color: white;
-  padding: 130px 20px 110px;
-  position: relative;
+  padding: 130px 20px 100px;
   min-height: 460px;
 }
 
@@ -32,30 +26,12 @@ body {
   flex-wrap: wrap;
 }
 
-.hero-left {
-  flex: 1;
-  min-width: 300px;
-}
+.hero-left { flex: 1; }
+.hero-logo { width: 185px; height: 185px; margin-bottom: 20px; }
+.hero-title { font-size: 2.85rem; font-weight: 700; margin-bottom: 12px; }
+.hero-subtitle { font-size: 1.35rem; max-width: 620px; }
 
-.hero-logo {
-  width: 185px;
-  height: 185px;
-  margin-bottom: 20px;
-}
-
-.hero-title {
-  font-size: 2.85rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.hero-subtitle {
-  font-size: 1.35rem;
-  max-width: 620px;
-  opacity: 0.95;
-}
-
-/* Login-Bereich direkt im Hero */
+/* Login im Hero */
 .hero-auth {
   background: rgba(255,255,255,0.95);
   color: #333;
@@ -75,44 +51,20 @@ body {
   font-weight: 600;
   display: inline-block;
   width: 100%;
-  margin-bottom: 8px;
 }
 
-.logged-in {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.greeting {
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: var(--primary-green);
-  margin-bottom: 6px;
-}
-
+.logged-in { display: flex; flex-direction: column; gap: 10px; }
+.greeting { font-weight: 600; font-size: 1.2rem; color: var(--primary-green); }
+.logout-btn { background: #c62828; color: white; }
+.book-btn   { background: var(--accent-green); color: white; }
 .logout-btn, .book-btn {
   padding: 10px 22px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  font-weight: 500;
 }
 
-.logout-btn { background: #c62828; color: white; }
-.book-btn   { background: var(--accent-green); color: white; }
-
-.profile-link {
-  font-size: 1.75rem;
-  text-decoration: none;
-}
-
-/* ====================== NAVIGATION ====================== */
-.menu {
-  background: white;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
+/* Navigation */
 .menu-button {
   background: var(--primary-green);
   color: white;
@@ -121,44 +73,20 @@ body {
   border: none;
   width: 100%;
   text-align: left;
-  cursor: pointer;
 }
 
-.menu-list {
-  display: none;
-  list-style: none;
-  background: white;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-}
+.menu-list { display: none; list-style: none; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.12); }
+.menu-list.show { display: block; }
+.menu-list a { display: block; padding: 16px 25px; color: #333; text-decoration: none; }
 
-.menu-list.show {
-  display: block;
-}
+/* Main */
+main { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
-.menu-list a {
-  display: block;
-  padding: 16px 25px;
-  color: #333;
-  text-decoration: none;
-}
-
-/* ====================== MAIN ====================== */
-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.section h2 {
-  color: var(--primary-green);
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 1.9rem;
-}
+.section h2 { color: var(--primary-green); text-align: center; margin-bottom: 25px; font-size: 1.9rem; }
 
 .info-card {
   background: white;
-  padding: 35px 40px;
+  padding: 35px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   text-align: center;
@@ -185,25 +113,10 @@ main {
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 14px;
-  text-align: center;
-  border-bottom: 1px solid #eee;
-}
-
-th {
-  background: var(--light-green);
-}
-
-.countdown {
-  font-weight: 600;
-  color: var(--accent-green);
-}
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 14px; text-align: center; border-bottom: 1px solid #eee; }
+th { background: var(--light-green); }
+.countdown { font-weight: 600; color: var(--accent-green); }
 
 /* Feiertage */
 .feiertage-grid {
@@ -220,10 +133,7 @@ th {
   box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
-.feiertag-card h4 {
-  color: var(--primary-green);
-  margin-bottom: 10px;
-}
+.feiertag-card h4 { color: var(--primary-green); margin-bottom: 10px; }
 
 /* Inspiration */
 .inspiration-grid {
@@ -256,21 +166,8 @@ footer {
 }
 
 /* Dark Mode */
-.dark-mode {
-  background: #0a140a;
-  color: #ddd;
-}
-
+.dark-mode { background: #0a140a; color: #ddd; }
 .dark-mode .info-card,
 .dark-mode .prayer-card,
 .dark-mode .feiertag-card,
-.dark-mode .inspiration-card {
-  background: #1a2a1a;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-content { justify-content: center; text-align: center; }
-  .hero-auth { margin-top: 30px; width: 100%; }
-  .hero-title { font-size: 2.4rem; }
-}
+.dark-mode .inspiration-card { background: #1a2a1a; }
