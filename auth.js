@@ -11,9 +11,6 @@ import { doc, getDoc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-
 document.addEventListener("DOMContentLoaded", () => {
     const registerForm = document.getElementById("register-form");
     const loginForm = document.getElementById("login-form");
-    const loginLink = document.getElementById("login-link");
-    const userInfo = document.getElementById("user-info");
-    const greeting = document.getElementById("greeting");
 
     // Registrierung
     if (registerForm) {
@@ -40,9 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             const email = document.getElementById("login-email").value.trim();
             const password = document.getElementById("login-password").value;
+
             try {
                 await signInWithEmailAndPassword(auth, email, password);
-                alert("✅ Assalam Alaykum");
+                alert("✅ Assalamu alaikum");
                 window.location.href = "index.html";
             } catch (error) {
                 alert("❌ Login fehlgeschlagen: " + error.message);
@@ -50,16 +48,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Auth-Zustand anzeigen + gelesene Bücher aus Firebase holen
+    // ====================== AUTH STATE ======================
+    const loginLink = document.getElementById("login-link");
+    const userInfo = document.getElementById("user-info");
+    const greeting = document.getElementById("greeting");
+
     if (loginLink && userInfo && greeting) {
         onAuthStateChanged(auth, async (user) => {
             if (user) {
+                // === EINGELOGGT ===
                 loginLink.classList.add("hidden");
                 userInfo.classList.remove("hidden");
-                const name = user.displayName || user.email.split("@")[0];
-                greeting.textContent = `👋 Assalamu alaikum, ${name}`;
 
-                // 🔁 Firebase-Daten synchronisieren
+                const name = user.displayName || user.email.split("@")[0];
+                greeting.textContent = `Assalamu alaikum, ${name}`;
+
+                // Firebase-Daten für gelesene Bücher synchronisieren
                 try {
                     const ref = doc(db, "gelesene-buecher", user.uid);
                     const snap = await getDoc(ref);
@@ -75,12 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.error("❌ Fehler beim Abrufen gelesener Bücher:", error);
                 }
 
-                // 📌 Bereich sichtbar machen, wenn Daten vorhanden
+                // Fortsetzen-Button anzeigen, falls vorhanden
                 const fortsetzenContainer = document.getElementById("fortsetzen-container");
                 if (fortsetzenContainer && localStorage.getItem("zuletzt-gelesen")) {
                     fortsetzenContainer.classList.remove("hidden");
                 }
             } else {
+                // === NICHT EINGELOGGT ===
                 loginLink.classList.remove("hidden");
                 userInfo.classList.add("hidden");
             }
@@ -90,8 +95,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Logout-Funktion
     window.logout = () => {
         signOut(auth)
-            .then(() => location.reload())
-            .catch(error => alert("❌ Fehler beim Logout: " + error.message));
+            .then(() => {
+                location.reload();   // Seite neu laden, damit alles zurückgesetzt wird
+            })
+            .catch(error => {
+                alert("❌ Fehler beim Logout: " + error.message);
+            });
     };
 });
-
