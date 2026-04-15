@@ -12,16 +12,31 @@
 </head>
 <body>
 
+  <!-- HEADER MIT LOGIN -->
+  <header class="top-header">
+    <div class="logo-small">
+      <img src="icons/logo_sakinah.png" alt="Sakinah" class="small-logo">
+    </div>
+    
+    <div id="user-status" class="user-status">
+      <a href="login.html" id="login-link" class="login-btn">🔐 Login</a>
+      <div id="user-info" class="user-info hidden">
+        <span id="greeting"></span>
+        <a href="profil.html" class="profile-icon">👤</a>
+        <button onclick="logout()" class="logout-btn">🚪 Logout</button>
+      </div>
+    </div>
+  </header>
+
   <!-- MODERNER HERO -->
-  <header class="hero">
+  <section class="hero">
     <div class="hero-content">
       <img src="icons/logo_sakinah.png" alt="Sakinah Initiative" class="hero-logo">
       <h1 class="hero-title">Sakinah Initiative</h1>
       <p class="hero-subtitle">Ruhe im Herzen • Orientierung im Glauben • Barmherzigkeit in der Begegnung</p>
-      <p class="hero-subtitle">Gemeinsam durchatmen</p>
       <a href="#gebetszeiten" class="hero-button">Zu den Gebetszeiten</a>
     </div>
-  </header>
+  </section>
 
   <!-- NAVIGATION -->
   <nav class="menu">
@@ -40,20 +55,12 @@
     </ul>
   </nav>
 
-  <div id="user-status" class="user-info">
-    <a href="login.html" id="login-link">🔐 Login</a>
-    <div id="user-info" class="hidden">
-      <span id="greeting"></span>
-      <a href="profil.html">👤</a>
-      <button onclick="logout()">🚪 Logout</button>
-    </div>
-  </div>
-
-  <div id="fortsetzen-container" class="hidden">
+  <!-- FORTSETZEN BUTTON -->
+  <div id="fortsetzen-container" class="fortsetzen-btn hidden">
     <button onclick="fortsetzenLetztesBuch()">📖 Zuletzt gelesenes Buch öffnen</button>
   </div>
 
-  <!-- ALLE ELEMENTE FÜR DEIN SCRIPT -->
+  <!-- VERSTECKTE ELEMENTE FÜR SCRIPT -->
   <div style="display: none;">
     <span id="uhrzeit"></span>
     <span id="datum"></span>
@@ -67,73 +74,69 @@
 
   <main>
 
-    <div class="container">
+    <!-- Kurze Info über Sakinah Initiative -->
+    <section class="info-section">
+      <div class="info-box">
+        <h2>Willkommen bei der Sakinah Initiative</h2>
+        <p>Wir sind eine Initiative für <strong>muslimische Seelsorge, Bildung und Dialog</strong>. Unser Ziel ist es, Menschen innere Ruhe, Orientierung und Hoffnung zu schenken.</p>
+        <p>„Und Wir haben dich nur als Barmherzigkeit für die Weltenbewohner gesandt.“ (21:107)</p>
+      </div>
+    </section>
 
-      <!-- Gebetszeiten Box (mit allen Original-IDs) -->
-      <div class="box">
-        <h2>Gebetszeiten</h2>
-        <p id="stadt-name"></p>
+    <!-- Gebetszeiten -->
+    <section id="gebetszeiten" class="section">
+      <h2>Gebetszeiten</h2>
+      <p id="stadt-name"></p>
+      <div id="stadt-container">
+        <select id="stadt-auswahl"></select>
+      </div>
 
-        <div id="stadt-container">
-          <div class="stadt-dropdown">
-            <select id="stadt-auswahl"></select>
-          </div>
-        </div>
-
+      <div class="prayer-table-container">
         <table>
           <tr><th>Gebet</th><th>Uhrzeit</th><th>Beginnt in</th></tr>
-          <tr><td><strong>Fajr (Fastenbeginn)</strong></td><td id="fajr">00:00</td><td id="fajr-countdown" class="nextprayer-bold">00:00:00</td></tr>
-          <tr><td>Shuruk</td><td id="shuruk">00:00</td><td id="shuruk-countdown" class="nextprayer-bold">00:00:00</td></tr>
-          <tr><td><strong>Dhuhr</strong></td><td id="dhuhr">00:00</td><td id="dhuhr-countdown" class="nextprayer-bold">00:00:00</td></tr>
-          <tr><td><strong>Asr</strong></td><td id="asr">00:00</td><td id="asr-countdown" class="nextprayer-bold">00:00:00</td></tr>
-          <tr><td colspan="3" class="asr-hinweis">
-            Bitte beachtet die <a href="beiträge.html#asr-regelungen" class="asr-link">Regelungen zum Ende des Asr-Gebets</a>.
-          </td></tr>
-          <tr><td><strong>Maghrib (Iftar)</strong></td><td id="maghrib">00:00</td><td id="maghrib-countdown" class="nextprayer-bold">00:00:00</td></tr>
-          <tr><td><strong>Isha</strong></td><td id="isha">00:00</td><td id="isha-countdown" class="nextprayer-bold">00:00:00</td></tr>
-          <tr><td>Islamische Mitternacht</td><td id="mitternacht">00:00</td><td id="mitternacht-countdown" class="nextprayer-bold">00:00:00</td></tr>
-          <tr><td colspan="3" class="asr-hinweis">Sunnah Gebete:</td></tr>
-          <tr><td>Duha</td><td id="duha">00:00</td><td id="duha-countdown" class="nextprayer-bold">00:00:00</td></tr>
-          <tr><td>Letztes Drittel der Nacht</td><td id="letztes-drittel">00:00</td><td id="letztes-drittel-countdown" class="nextprayer-bold">00:00:00</td></tr>
+          <tr><td><strong>Fajr (Fastenbeginn)</strong></td><td id="fajr">00:00</td><td id="fajr-countdown" class="countdown"></td></tr>
+          <tr><td>Shuruk</td><td id="shuruk">00:00</td><td id="shuruk-countdown" class="countdown"></td></tr>
+          <tr><td><strong>Dhuhr</strong></td><td id="dhuhr">00:00</td><td id="dhuhr-countdown" class="countdown"></td></tr>
+          <tr><td><strong>Asr</strong></td><td id="asr">00:00</td><td id="asr-countdown" class="countdown"></td></tr>
+          <tr><td><strong>Maghrib (Iftar)</strong></td><td id="maghrib">00:00</td><td id="maghrib-countdown" class="countdown"></td></tr>
+          <tr><td><strong>Isha</strong></td><td id="isha">00:00</td><td id="isha-countdown" class="countdown"></td></tr>
         </table>
       </div>
+    </section>
 
-      <!-- Islamische Feiertage -->
-      <div class="box">
-        <h2>Islamische Tage</h2>
-        <p>Bitte beachtet, dass der islamische Tag mit Maghrib des Vortages beginnt.</p>
-        <table>
-          <tr><th>Tag</th><th>Datum</th><th>Beginnt in</th></tr>
-          <tr><td>Ramadan</td><td>01.03.2025</td><td id="ramadan-countdown" class="nextprayer-bold">Lädt...</td></tr>
-          <tr><td>Eid al-Fitr</td><td>30.03.2025</td><td id="fitr-countdown" class="nextprayer-bold">Lädt...</td></tr>
-          <tr><td>Hajj</td><td>04.06.2025</td><td id="hajj-countdown" class="nextprayer-bold">Lädt...</td></tr>
-          <tr><td>Arafah</td><td>05.06.2025</td><td id="arafah-countdown" class="nextprayer-bold">Lädt...</td></tr>
-          <tr><td>Eid al-Adha</td><td>06.06.2025</td><td id="adha-countdown" class="nextprayer-bold">Lädt...</td></tr>
-          <tr><td>Neujahr</td><td>26.06.2025</td><td id="neujahr-countdown" class="nextprayer-bold">Lädt...</td></tr>
-          <tr><td>Ashura</td><td>05.07.2025</td><td id="ashura-countdown" class="nextprayer-bold">Lädt...</td></tr>
-          <tr><td>Isra' und Mi'raj</td><td>16.01.2026</td><td id="isra-countdown" class="nextprayer-bold">Lädt...</td></tr>
-        </table>
+    <!-- Feiertage -->
+    <section class="section">
+      <h2>Islamische Tage</h2>
+      <div class="feiertage-grid">
+        <div class="feiertag-card"><h4>Ramadan</h4><p id="ramadan-countdown" class="countdown">Lädt...</p></div>
+        <div class="feiertag-card"><h4>Eid al-Fitr</h4><p id="fitr-countdown" class="countdown">Lädt...</p></div>
+        <div class="feiertag-card"><h4>Hajj</h4><p id="hajj-countdown" class="countdown">Lädt...</p></div>
+        <div class="feiertag-card"><h4>Arafah</h4><p id="arafah-countdown" class="countdown">Lädt...</p></div>
+        <div class="feiertag-card"><h4>Eid al-Adha</h4><p id="adha-countdown" class="countdown">Lädt...</p></div>
+        <div class="feiertag-card"><h4>Neujahr</h4><p id="neujahr-countdown" class="countdown">Lädt...</p></div>
+        <div class="feiertag-card"><h4>Ashura</h4><p id="ashura-countdown" class="countdown">Lädt...</p></div>
+        <div class="feiertag-card"><h4>Isra' & Mi'raj</h4><p id="isra-countdown" class="countdown">Lädt...</p></div>
       </div>
-    </div>
+    </section>
 
     <!-- Hadith & Dua -->
-    <div class="container">
-      <div class="box">
-        <h2>Hadith des Tages</h2>
-        <p id="hadith-arabisch">Lädt...</p>
-        <p id="hadith-deutsch">Lädt...</p>
-        <p><strong>Quelle:</strong> <span id="hadith-quelle">Lädt...</span></p>
-        <p><strong>Authentizität:</strong> <span id="hadith-auth">Lädt...</span></p>
+    <section class="section">
+      <div class="inspiration-grid">
+        <div class="inspiration-card">
+          <h3>Hadith des Tages</h3>
+          <p id="hadith-arabisch" class="arabic">Lädt...</p>
+          <p id="hadith-deutsch">Lädt...</p>
+          <small><strong>Quelle:</strong> <span id="hadith-quelle"></span> | <strong>Auth:</strong> <span id="hadith-auth"></span></small>
+        </div>
+        <div class="inspiration-card">
+          <h3>Bittgebet des Tages</h3>
+          <p id="dua-arabisch" class="arabic">Lädt...</p>
+          <p id="dua-trans"></p>
+          <p id="dua-deutsch"></p>
+          <small><strong>Quelle:</strong> <span id="dua-quelle"></span></small>
+        </div>
       </div>
-
-      <div class="box">
-        <h2>Bittgebet des Tages</h2>
-        <p id="dua-arabisch">Lädt...</p>
-        <p id="dua-trans">Lädt...</p>
-        <p id="dua-deutsch">Lädt...</p>
-        <p><strong>Quelle:</strong> <span id="dua-quelle">Lädt...</span></p>
-      </div>
-    </div>
+    </section>
 
   </main>
 
