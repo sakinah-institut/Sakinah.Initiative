@@ -53,7 +53,7 @@
     <button onclick="fortsetzenLetztesBuch()">📖 Zuletzt gelesenes Buch öffnen</button>
   </div>
 
-  <!-- Versteckte Elemente für script.js -->
+  <!-- ALLE ELEMENTE, DIE DEIN ORIGINALES script.js BENÖTIGT -->
   <div style="display: none;">
     <span id="uhrzeit"></span>
     <span id="datum"></span>
@@ -63,23 +63,31 @@
     <span id="stadt-name"></span>
     <div id="stadt-container"></div>
     <select id="stadt-auswahl"></select>
+
+    <!-- Feiertage -->
+    <span id="ramadan-countdown"></span>
+    <span id="fitr-countdown"></span>
+    <span id="hajj-countdown"></span>
+    <span id="arafah-countdown"></span>
+    <span id="adha-countdown"></span>
+    <span id="neujahr-countdown"></span>
+    <span id="ashura-countdown"></span>
+    <span id="isra-countdown"></span>
   </div>
 
   <main>
 
-    <!-- Gebetszeiten mit Stadtauswahl -->
+    <!-- Gebetszeiten -->
     <section id="gebetszeiten" class="section">
       <h2>Nächstes Gebet</h2>
-      
-      <div id="stadt-name" class="stadt-info"></div>
-      
-      <div id="stadt-container" class="stadt-container"></div>
+      <div id="stadt-name" style="text-align:center; margin:15px 0; font-weight:500;"></div>
+      <div id="stadt-container" style="text-align:center; margin-bottom:25px;"></div>
 
       <div class="prayer-card">
         <p id="next-prayer" class="prayer-name">Lädt...</p>
         <p id="next-prayer-countdown" class="countdown-big">Lädt...</p>
       </div>
-      <p id="current-prayer" class="current-prayer"></p>
+      <p id="current-prayer" style="text-align:center; margin-top:25px; font-size:1.3rem;"></p>
     </section>
 
     <!-- Heutige Inspiration -->
