@@ -2,13 +2,13 @@
   {
     "name": "ramadan",
     "label": "Ramadan",
-    "date": "2027-02-08",
+    "datum": "2027-02-08",
     "id": "ramadan-countdown"
   },
   {
     "name": "fitr",
     "label": "Eid al-Fitr",
-    "date": "2027-03-09",
+    "datum": "2027-03-09",
     "id": "fitr-countdown"
   },
   {
