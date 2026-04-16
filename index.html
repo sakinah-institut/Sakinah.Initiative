@@ -12,9 +12,21 @@
 </head>
 <body>
 
-  <!-- GANZ OBEN: Auth-Bereich -->
+  <!-- GANZ OBEN: Auth + Berlin & Mekka + Aktuelles Gebet -->
   <header class="top-auth-bar">
     <div class="top-auth-content">
+      <div class="date-time">
+        <span id="datum"></span> — 
+        <span id="uhrzeit">Berlin: 00:00</span> — 
+        <span id="mekka-uhrzeit">Mekka: 00:00</span>
+      </div>
+
+      <!-- Aktuelles Gebet aus dem Script nutzen -->
+      <div id="current-prayer-top" class="current-prayer-top">
+        <span id="current-prayer"></span> 
+        <span id="current-prayer-countdown"></span>
+      </div>
+
       <a href="login.html" id="login-link" class="login-btn">🔐 Login</a>
       
       <div id="user-info" class="logged-in hidden">
@@ -25,7 +37,7 @@
       </div>
     </div>
   </header>
-
+  
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
