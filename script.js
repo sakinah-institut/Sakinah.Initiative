@@ -371,17 +371,20 @@ async function ladeFeiertagsCountdowns(stadt) {
         let data = await response.json();
         let maghribZeitHeute = data.data.timings.Maghrib;
 
-        // 📌 Feiertage mit ihren realen Daten
-        let feiertage = {
-            "ramadan-countdown": "2025-03-01",
-            "fitr-countdown": "2025-03-30",
-            "hajj-countdown": "2025-06-04",
-            "arafah-countdown": "2025-06-05",
-            "adha-countdown": "2025-06-06",
-            "neujahr-countdown": "2025-06-26",
-            "ashura-countdown": "2025-07-05",
-            "isra-countdown": "2026-01-16"
-        };
+      
+        // 📌 Feiertage mit aktualisierten Daten (Stand 25.04.2026)
+let feiertage = {
+    "ramadan-countdown": "2027-02-08",     // Ramadan 1448
+    "fitr-countdown":    "2027-03-09",     // Eid al-Fitr 1448
+    "hajj-countdown":    "2026-05-25",     // Hajj 2026 (noch kommend!)
+    "arafah-countdown":  "2026-05-26",     // Arafah 2026
+    "adha-countdown":    "2026-05-27",     // Eid al-Adha 2026
+    "neujahr-countdown": "2026-06-16",     // Islamisches Neujahr 1448
+    "ashura-countdown":  "2026-06-25",     // Ashura 1448
+    "isra-countdown":    "2027-01-05"      // Isra' & Mi'raj 1448
+};
+        
+    
 
         // 📌 Für jeden Feiertag den Countdown berechnen
         for (let id in feiertage) {
