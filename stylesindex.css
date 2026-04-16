@@ -13,7 +13,7 @@ body {
   line-height: 1.7;
 }
 
-/* ====================== TOP AUTH BAR (ganz oben) ====================== */
+/* ====================== TOP AUTH BAR ====================== */
 .top-auth-bar {
   background: white;
   padding: 14px 25px;
@@ -41,16 +41,17 @@ body {
 
 /* Aktuelles Gebet in der oberen Zeile */
 .current-prayer-top {
+  margin-left: 18px;
   font-weight: 600;
   color: var(--accent-green);
-  margin-left: 15px;
-  white-space: nowrap;
+  font-size: 1.08rem;
 }
 
 .current-prayer-top #current-prayer {
   margin-right: 8px;
 }
 
+/* Login */
 .login-btn {
   background: var(--primary-green);
   color: white;
@@ -159,7 +160,7 @@ body {
   text-decoration: none;
 }
 
-/* ====================== MAIN CONTENT ====================== */
+/* ====================== MAIN ====================== */
 main {
   max-width: 1100px;
   margin: 0 auto;
@@ -167,7 +168,7 @@ main {
 }
 
 .section {
-  margin-bottom: 85px;   /* Mehr Abstand zwischen Abschnitten */
+  margin-bottom: 90px;   /* Mehr Abstand zwischen Abschnitten */
 }
 
 .section h2 {
@@ -230,7 +231,7 @@ th {
 .feiertage-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 20px;
+  gap: 22px;
 }
 
 .feiertag-card {
@@ -250,7 +251,7 @@ th {
 .inspiration-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 25px;
+  gap: 28px;
 }
 
 .inspiration-card {
@@ -287,14 +288,4 @@ footer {
 .dark-mode .feiertag-card,
 .dark-mode .inspiration-card {
   background: #1a2a1a;
-}
-
-/* Responsive */
-@media (max-width: 950px) {
-  .date-time, .current-prayer-top {
-    font-size: 0.98rem;
-  }
-  .top-auth-content {
-    justify-content: center;
-  }
 }
