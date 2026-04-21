@@ -10,10 +10,9 @@ body {
   background: var(--beige);
   color: #333;
   margin: 0;
-  line-height: 1.7;
 }
 
-/* ====================== TOP BAR ====================== */
+/* Top Bar */
 .top-auth-bar {
   background: white;
   padding: 14px 25px;
@@ -37,62 +36,34 @@ body {
   font-weight: 500;
   color: #555;
   font-size: 1.05rem;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
 }
 
 .islamic-date {
   color: var(--accent-green);
   font-weight: 500;
+  margin-left: 12px;
 }
 
-/* User Icon + Dropdown */
-.user-menu { position: relative; }
-
-.user-icon-btn {
-  background: none;
-  border: none;
-  font-size: 1.85rem;
-  cursor: pointer;
-  padding: 6px 10px;
-}
-
-.user-dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: white;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  border-radius: 12px;
-  padding: 10px 0;
-  min-width: 220px;
-  display: none;
-  z-index: 310;
-}
-
-.user-dropdown.show {
-  display: block;
-}
-
-.user-dropdown a, .user-dropdown button {
-  display: block;
-  padding: 12px 20px;
-  color: #333;
+/* Login */
+.login-btn {
+  background: var(--primary-green);
+  color: white;
+  padding: 11px 28px;
+  border-radius: 30px;
   text-decoration: none;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
+  font-weight: 600;
 }
 
-.user-dropdown a:hover, .user-dropdown button:hover {
-  background: var(--light-green);
+.logged-in {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-/* ====================== HERO ====================== */
+.greeting { font-weight: 600; color: var(--primary-green); }
+
+/* Hero */
 .hero {
   background: linear-gradient(rgba(0, 78, 0, 0.68), rgba(0, 78, 0, 0.48)), 
               url('icons/hero-background.jpg') center/cover no-repeat;
@@ -123,10 +94,25 @@ body {
   transform: translateY(-4px);
 }
 
-/* Rest (Navigation, Sections, etc.) */
+/* Navigation */
+.menu-button {
+  background: var(--primary-green);
+  color: white;
+  font-size: 1.6rem;
+  padding: 14px 20px;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.menu-list { display: none; list-style: none; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.12); }
+.menu-list.show { display: block; }
+.menu-list a { display: block; padding: 16px 25px; color: #333; text-decoration: none; }
+
+/* Main */
 main { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
-.section { margin-bottom: 85px; }
+.section { margin-bottom: 90px; }
 
 .section h2 { color: var(--primary-green); text-align: center; margin-bottom: 28px; font-size: 1.95rem; }
 
@@ -164,4 +150,17 @@ footer {
   text-align: center;
   padding: 45px 20px;
   margin-top: 90px;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background: #0a140a;
+  color: #ddd;
+}
+
+.dark-mode .info-card,
+.dark-mode .prayer-card,
+.dark-mode .feiertag-card,
+.dark-mode .inspiration-card {
+  background: #1a2a1a;
 }
