@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <!-- GANZ OBEN: Auth + Datum + Uhrzeit + Islamisches Datum + Aktuelles Gebet -->
+  <!-- GANZ OBEN: Auth + Datum + Berlin + Mekka + Islamisches Datum + Aktuelles Gebet -->
   <header class="top-auth-bar">
     <div class="top-auth-content">
       <div class="date-time">
@@ -21,7 +21,7 @@
         <span id="mekka-uhrzeit">Mekka: 00:00</span>
         <span id="islamisches-datum" class="islamic-date"></span>
         
-        <!-- Aktuelles Gebet (Script schreibt hierhin) -->
+        <!-- Aktuelles Gebet (vom Script befüllt) -->
         <span id="current-prayer-top" class="current-prayer-top">
           <span id="current-prayer"></span> 
           <span id="current-prayer-countdown"></span>
@@ -67,6 +67,7 @@
 
   <!-- VERSTECKTE ELEMENTE FÜR SCRIPT -->
   <div style="display: none;">
+    <span id="hadith-auth"></span>
     <span id="stadt-name"></span>
     <div id="stadt-container"></div>
     <select id="stadt-auswahl"></select>
