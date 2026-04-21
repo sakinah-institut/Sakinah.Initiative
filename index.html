@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <!-- TOP BAR – genau wie gewünscht -->
+  <!-- TOP BAR – genau wie du es wolltest -->
   <header class="top-auth-bar">
     <div class="top-auth-content">
       <div class="date-time">
@@ -26,10 +26,7 @@
       <div class="user-menu">
         <button class="user-icon-btn" onclick="toggleUserDropdown()">👤</button>
         <div id="user-dropdown" class="user-dropdown hidden">
-          <!-- Login (wenn nicht eingeloggt) -->
           <a href="login.html" id="dropdown-login-link">🔐 Login</a>
-          
-          <!-- Eingeloggt-Bereich -->
           <div id="dropdown-user-info" class="hidden">
             <span id="dropdown-greeting" class="greeting"></span>
             <a href="profil.html">👤 Profil / Einstellungen</a>
@@ -67,7 +64,7 @@
     </ul>
   </nav>
 
-  <!-- VERSTECKTE ELEMENTE FÜR SCRIPT.JS (wichtig für keine Fehler) -->
+  <!-- VERSTECKTE ELEMENTE FÜR SCRIPT.JS (verhindert alle null-Fehler) -->
   <div style="display: none;">
     <span id="next-prayer"></span>
     <span id="next-prayer-countdown"></span>
@@ -80,7 +77,6 @@
   </div>
 
   <main>
-    <!-- Kurze Info -->
     <section class="info-section">
       <div class="info-card">
         <h2>Willkommen bei der Sakinah Initiative</h2>
@@ -88,7 +84,6 @@
       </div>
     </section>
 
-    <!-- Gebetszeiten -->
     <section id="gebetszeiten" class="section">
       <h2>Gebetszeiten</h2>
       <p id="stadt-name"></p>
@@ -108,7 +103,7 @@
       </div>
     </section>
 
-    <!-- Feiertage & Inspiration bleiben unverändert -->
+    <!-- Feiertage und Inspiration bleiben gleich -->
     <section class="section">
       <h2>Islamische Tage</h2>
       <div class="feiertage-grid">
@@ -146,17 +141,14 @@
     <p>&copy; 2026 Sakinah Initiative – Abdul Rahman ibn Walid Itani</p>
   </footer>
 
-  <!-- Kleines Inline-Script nur für den Dropdown (keine Änderung an script.js) -->
   <script>
     function toggleUserDropdown() {
       const dropdown = document.getElementById("user-dropdown");
       dropdown.classList.toggle("hidden");
       dropdown.classList.toggle("show");
     }
-    // Schließen wenn außerhalb geklickt
     document.addEventListener("click", (e) => {
-      const menu = document.querySelector(".user-menu");
-      if (!menu.contains(e.target)) {
+      if (!document.querySelector(".user-menu").contains(e.target)) {
         const dropdown = document.getElementById("user-dropdown");
         dropdown.classList.add("hidden");
         dropdown.classList.remove("show");
