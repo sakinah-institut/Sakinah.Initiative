@@ -43,57 +43,58 @@ body {
   gap: 8px;
 }
 
-.islamic-date {
+.islamic-date, .current-prayer-top {
   color: var(--accent-green);
   font-weight: 500;
 }
 
-.current-prayer-top {
-  margin-left: 15px;
-  font-weight: 600;
-  color: var(--accent-green);
-  font-size: 1.08rem;
+/* User Icon + Dropdown */
+.user-menu {
+  position: relative;
 }
 
-.current-prayer-top #current-prayer {
-  margin-right: 6px;
-}
-
-/* Login */
-.login-btn {
-  background: var(--primary-green);
-  color: white;
-  padding: 11px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.logged-in {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.greeting {
-  font-weight: 600;
-  color: var(--primary-green);
-  font-size: 1.15rem;
-}
-
-.logout-btn, .book-btn {
-  padding: 10px 22px;
+.user-icon-btn {
+  background: none;
   border: none;
-  border-radius: 30px;
+  font-size: 1.8rem;
   cursor: pointer;
-  font-weight: 500;
+  padding: 6px 10px;
 }
 
-.logout-btn { background: #c62828; color: white; }
-.book-btn   { background: var(--accent-green); color: white; }
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  padding: 10px 0;
+  min-width: 220px;
+  display: none;
+  z-index: 310;
+}
 
-/* ====================== HERO ====================== */
+.user-dropdown.show {
+  display: block;
+}
+
+.user-dropdown a, .user-dropdown button {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.user-dropdown a:hover, .user-dropdown button:hover {
+  background: var(--light-green);
+}
+
+/* Hero */
 .hero {
   background: linear-gradient(rgba(0, 78, 0, 0.68), rgba(0, 78, 0, 0.48)), 
               url('icons/hero-background.jpg') center/cover no-repeat;
@@ -102,24 +103,9 @@ body {
   text-align: center;
 }
 
-.hero-logo {
-  width: 195px;
-  height: 195px;
-  margin: 0 auto 25px;
-  display: block;
-}
-
-.hero-title {
-  font-size: 2.95rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.hero-subtitle {
-  font-size: 1.38rem;
-  max-width: 720px;
-  margin: 0 auto 35px;
-}
+.hero-logo { width: 195px; height: 195px; margin: 0 auto 25px; display: block; }
+.hero-title { font-size: 2.95rem; font-weight: 700; margin-bottom: 15px; }
+.hero-subtitle { font-size: 1.38rem; max-width: 720px; margin: 0 auto 35px; }
 
 .hero-button {
   background: white;
@@ -139,45 +125,10 @@ body {
   transform: translateY(-4px);
 }
 
-/* ====================== NAVIGATION ====================== */
-.menu-button {
-  background: var(--primary-green);
-  color: white;
-  font-size: 1.6rem;
-  padding: 14px 20px;
-  border: none;
-  width: 100%;
-  text-align: left;
-}
+/* Rest der Styles (Navigation, Sections, etc.) */
+main { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
-.menu-list {
-  display: none;
-  list-style: none;
-  background: white;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-}
-
-.menu-list.show {
-  display: block;
-}
-
-.menu-list a {
-  display: block;
-  padding: 16px 25px;
-  color: #333;
-  text-decoration: none;
-}
-
-/* ====================== MAIN ====================== */
-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.section {
-  margin-bottom: 90px;   /* Mehr Abstand zwischen Abschnitten */
-}
+.section { margin-bottom: 90px; }
 
 .section h2 {
   color: var(--primary-green);
@@ -186,87 +137,25 @@ main {
   font-size: 1.95rem;
 }
 
-.info-card {
+.info-card, .prayer-card, .feiertag-card, .inspiration-card {
   background: white;
-  padding: 40px;
+  padding: 32px;
   border-radius: 24px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-  text-align: center;
-  max-width: 820px;
-  margin: 0 auto 70px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.09);
 }
 
-/* Gebetszeiten */
-.city-select {
-  padding: 13px 26px;
-  font-size: 1.12rem;
-  border: 2px solid #ccc;
-  border-radius: 14px;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto 30px;
-  display: block;
-}
+.countdown { font-weight: 600; color: var(--accent-green); }
 
-.prayer-card {
-  background: white;
-  padding: 28px;
-  border-radius: 24px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 15px 12px;
-  text-align: center;
-  border-bottom: 1px solid #eee;
-}
-
-th {
-  background: var(--light-green);
-}
-
-.countdown {
-  font-weight: 600;
-  color: var(--accent-green);
-}
-
-/* Feiertage */
 .feiertage-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 22px;
 }
 
-.feiertag-card {
-  background: white;
-  padding: 24px 18px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.09);
-}
-
-.feiertag-card h4 {
-  color: var(--primary-green);
-  margin-bottom: 12px;
-}
-
-/* Inspiration */
 .inspiration-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 28px;
-}
-
-.inspiration-card {
-  background: white;
-  padding: 32px;
-  border-radius: 22px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.09);
 }
 
 .arabic {
@@ -276,24 +165,10 @@ th {
   color: #003300;
 }
 
-/* Footer */
 footer {
   background: var(--primary-green);
   color: white;
   text-align: center;
   padding: 45px 20px;
   margin-top: 90px;
-}
-
-/* Dark Mode */
-.dark-mode {
-  background: #0a140a;
-  color: #ddd;
-}
-
-.dark-mode .info-card,
-.dark-mode .prayer-card,
-.dark-mode .feiertag-card,
-.dark-mode .inspiration-card {
-  background: #1a2a1a;
 }
