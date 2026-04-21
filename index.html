@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <!-- GANZ OBEN: Auth + Datum + Berlin + Mekka + Islamisches Datum + Aktuelles Gebet -->
+  <!-- GANZ OBEN: Auth-Bar mit Icon-Dropdown -->
   <header class="top-auth-bar">
     <div class="top-auth-content">
       <div class="date-time">
@@ -21,20 +21,26 @@
         <span id="mekka-uhrzeit">Mekka: 00:00</span>
         <span id="islamisches-datum" class="islamic-date"></span>
         
-        <!-- Aktuelles Gebet (vom Script befüllt) -->
         <span id="current-prayer-top" class="current-prayer-top">
           <span id="current-prayer"></span> 
           <span id="current-prayer-countdown"></span>
         </span>
       </div>
 
-      <a href="login.html" id="login-link" class="login-btn">🔐 Login</a>
-      
-      <div id="user-info" class="logged-in hidden">
-        <span id="greeting" class="greeting"></span>
-        <a href="profil.html" class="profile-link">👤 Profil</a>
-        <button onclick="logout()" class="logout-btn">🚪 Logout</button>
-        <button onclick="fortsetzenLetztesBuch()" class="book-btn">📖 Zuletzt gelesen</button>
+      <!-- User Icon mit Dropdown -->
+      <div class="user-menu">
+        <button class="user-icon-btn" onclick="toggleUserDropdown()">
+          👤
+        </button>
+        <div id="user-dropdown" class="user-dropdown hidden">
+          <a href="login.html" id="dropdown-login-link">🔐 Login</a>
+          <div id="dropdown-user-info" class="hidden">
+            <span id="dropdown-greeting" class="greeting"></span>
+            <a href="profil.html">👤 Profil / Einstellungen</a>
+            <button onclick="fortsetzenLetztesBuch()">📖 Zuletzt gelesen</button>
+            <button onclick="logout()">🚪 Logout</button>
+          </div>
+        </div>
       </div>
     </div>
   </header>
