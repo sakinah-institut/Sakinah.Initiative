@@ -172,3 +172,24 @@ footer {
   padding: 45px 20px;
   margin-top: 90px;
 }
+
+/* Standort-Anzeige */
+.stadt-name {
+  text-align: center;
+  font-weight: 600;
+  color: var(--primary-green);
+  margin: 15px 0 10px;
+  font-size: 1.1rem;
+}
+
+/* City Select */
+.city-select {
+  padding: 13px 26px;
+  font-size: 1.12rem;
+  border: 2px solid #ccc;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 30px;
+  display: block;
+}
