@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <!-- GANZ OBEN: Datum + Berlin + Mekka + Islamisches Datum -->
+  <!-- TOP BAR – genau wie gewünscht -->
   <header class="top-auth-bar">
     <div class="top-auth-content">
       <div class="date-time">
@@ -22,13 +22,21 @@
         <span id="islamisches-datum" class="islamic-date"></span>
       </div>
 
-      <a href="login.html" id="login-link" class="login-btn">🔐 Login</a>
-      
-      <div id="user-info" class="logged-in hidden">
-        <span id="greeting" class="greeting"></span>
-        <a href="profil.html" class="profile-link">👤 Profil</a>
-        <button onclick="logout()" class="logout-btn">🚪 Logout</button>
-        <button onclick="fortsetzenLetztesBuch()" class="book-btn">📖 Zuletzt gelesen</button>
+      <!-- Nur das Profil-Icon -->
+      <div class="user-menu">
+        <button class="user-icon-btn" onclick="toggleUserDropdown()">👤</button>
+        <div id="user-dropdown" class="user-dropdown hidden">
+          <!-- Login (wenn nicht eingeloggt) -->
+          <a href="login.html" id="dropdown-login-link">🔐 Login</a>
+          
+          <!-- Eingeloggt-Bereich -->
+          <div id="dropdown-user-info" class="hidden">
+            <span id="dropdown-greeting" class="greeting"></span>
+            <a href="profil.html">👤 Profil / Einstellungen</a>
+            <button onclick="fortsetzenLetztesBuch()">📖 Zuletzt gelesen</button>
+            <button onclick="logout()">🚪 Logout</button>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -59,8 +67,12 @@
     </ul>
   </nav>
 
-  <!-- VERSTECKTE ELEMENTE FÜR SCRIPT -->
+  <!-- VERSTECKTE ELEMENTE FÜR SCRIPT.JS (wichtig für keine Fehler) -->
   <div style="display: none;">
+    <span id="next-prayer"></span>
+    <span id="next-prayer-countdown"></span>
+    <span id="current-prayer"></span>
+    <span id="current-prayer-countdown"></span>
     <span id="hadith-auth"></span>
     <span id="stadt-name"></span>
     <div id="stadt-container"></div>
@@ -72,7 +84,7 @@
     <section class="info-section">
       <div class="info-card">
         <h2>Willkommen bei der Sakinah Initiative</h2>
-        <p>Wir begleiten Menschen mit muslimischer Seelsorge, islamischer Bildung und respektvollem Dialog. Unser Name „Sakinah“ steht für innere Ruhe, Geborgenheit und Hoffnung.</p>
+        <p>Wir begleiten Menschen mit muslimischer Seelsorge, islamischer Bildung und respektvollem Dialog.</p>
       </div>
     </section>
 
@@ -96,7 +108,7 @@
       </div>
     </section>
 
-    <!-- Feiertage -->
+    <!-- Feiertage & Inspiration bleiben unverändert -->
     <section class="section">
       <h2>Islamische Tage</h2>
       <div class="feiertage-grid">
@@ -111,14 +123,13 @@
       </div>
     </section>
 
-    <!-- Hadith & Dua -->
     <section class="section">
       <div class="inspiration-grid">
         <div class="inspiration-card">
           <h3>Hadith des Tages</h3>
           <p id="hadith-arabisch" class="arabic">Lädt...</p>
           <p id="hadith-deutsch">Lädt...</p>
-          <small>Quelle: <span id="hadith-quelle"></span> | Auth: <span id="hadith-auth"></span></small>
+          <small>Quelle: <span id="hadith-quelle"></span></small>
         </div>
         <div class="inspiration-card">
           <h3>Bittgebet des Tages</h3>
@@ -135,5 +146,22 @@
     <p>&copy; 2026 Sakinah Initiative – Abdul Rahman ibn Walid Itani</p>
   </footer>
 
+  <!-- Kleines Inline-Script nur für den Dropdown (keine Änderung an script.js) -->
+  <script>
+    function toggleUserDropdown() {
+      const dropdown = document.getElementById("user-dropdown");
+      dropdown.classList.toggle("hidden");
+      dropdown.classList.toggle("show");
+    }
+    // Schließen wenn außerhalb geklickt
+    document.addEventListener("click", (e) => {
+      const menu = document.querySelector(".user-menu");
+      if (!menu.contains(e.target)) {
+        const dropdown = document.getElementById("user-dropdown");
+        dropdown.classList.add("hidden");
+        dropdown.classList.remove("show");
+      }
+    });
+  </script>
 </body>
 </html>
