@@ -16,7 +16,7 @@ body {
 /* ====================== TOP BAR ====================== */
 .top-auth-bar {
   background: white;
-  padding: 14px 25px;
+  padding: 14px 20px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
@@ -30,7 +30,7 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
 }
 
 .date-time {
@@ -40,7 +40,7 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .islamic-date {
@@ -72,7 +72,9 @@ body {
   z-index: 310;
 }
 
-.user-dropdown.show { display: block; }
+.user-dropdown.show {
+  display: block;
+}
 
 .user-dropdown a,
 .user-dropdown button {
@@ -92,7 +94,20 @@ body {
   background: var(--light-green);
 }
 
-/* ====================== HERO ====================== */
+/* ====================== MOBILE FIX FÜR DROPDOWN ====================== */
+@media (max-width: 480px) {
+  .user-dropdown {
+    right: 10px;           /* etwas Abstand vom rechten Rand */
+    min-width: 200px;      /* etwas schmaler auf Handy */
+    max-width: 92vw;       /* verhindert Überlauf */
+  }
+  
+  .top-auth-bar {
+    padding: 12px 15px;
+  }
+}
+
+/* ====================== REST DER SEITE (Hero, Karten etc.) ====================== */
 .hero {
   background: linear-gradient(rgba(0, 78, 0, 0.65), rgba(0, 78, 0, 0.45)), 
               url('icons/hero-background.jpg') center/cover no-repeat;
@@ -101,26 +116,9 @@ body {
   text-align: center;
 }
 
-.hero-logo {
-  width: 210px;
-  height: 210px;
-  margin: 0 auto 20px;
-  display: block;
-}
-
-.hero-title {
-  font-size: 3.1rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: white;
-}
-
-.hero-subtitle {
-  font-size: 1.35rem;
-  max-width: 720px;
-  margin: 0 auto 35px;
-  opacity: 0.95;
-}
+.hero-logo { width: 210px; height: 210px; margin: 0 auto 20px; display: block; }
+.hero-title { font-size: 3.1rem; font-weight: 700; margin-bottom: 12px; }
+.hero-subtitle { font-size: 1.35rem; max-width: 720px; margin: 0 auto 35px; }
 
 .hero-button {
   background: white;
@@ -131,48 +129,14 @@ body {
   font-size: 1.25rem;
   text-decoration: none;
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  transition: all 0.3s ease;
 }
 
 .hero-button:hover {
   background: var(--accent-green);
   color: white;
-  transform: translateY(-4px);
 }
 
-/* ====================== NAVIGATION ====================== */
-.menu-button {
-  background: var(--primary-green);
-  color: white;
-  font-size: 1.6rem;
-  padding: 14px 20px;
-  border: none;
-  width: 100%;
-  text-align: left;
-}
-
-.menu-list {
-  display: none;
-  list-style: none;
-  background: white;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-}
-
-.menu-list.show { display: block; }
-.menu-list a {
-  display: block;
-  padding: 16px 25px;
-  color: #333;
-  text-decoration: none;
-}
-
-/* ====================== MAIN ====================== */
-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
+main { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 .section { margin-bottom: 90px; }
 
 .section h2 {
@@ -190,13 +154,6 @@ main {
 }
 
 .countdown { font-weight: 600; color: var(--accent-green); }
-
-/* Aktuelles Gebet in Tabelle markieren */
-.prayer-card tr:has(.countdown:contains("Noch")),
-.prayer-card tr:has(.countdown:contains("Begonnen")) {
-  background-color: #e8f5e9 !important;
-  font-weight: 600;
-}
 
 .feiertage-grid {
   display: grid;
@@ -223,11 +180,4 @@ footer {
   text-align: center;
   padding: 45px 20px;
   margin-top: 90px;
-}
-
-/* Responsiv für Smartphone */
-@media (max-width: 768px) {
-  .hero { padding: 110px 15px 80px; }
-  .hero-title { font-size: 2.5rem; }
-  .hero-logo { width: 170px; height: 170px; }
 }
