@@ -12,15 +12,15 @@
 </head>
 <body>
 
-  <!-- TOP BAR – genau wie du es wolltest -->
+  <!-- TOP BAR – genau wie gewünscht -->
   <header class="top-auth-bar">
     <div class="top-auth-content">
       <div class="date-time">
-        <span id="uhrzeit"></span>Uhr <span id="datum"></span> 
-        <span id="mekka-uhrzeit"></span>Uhr <span id="islamisches-datum" class="islamic-date"></span>
+        Berlin: <span id="uhrzeit"></span> Uhr <span id="datum"></span>. 
+        Mekka: <span id="mekka-uhrzeit"></span> Uhr <span id="islamisches-datum" class="islamic-date"></span>
       </div>
 
-      <!-- Profil-Icon mit Dropdown (bleibt unverändert) -->
+      <!-- Profil-Icon mit Dropdown -->
       <div class="user-menu">
         <button class="user-icon-btn" onclick="toggleUserDropdown()">👤</button>
         <div id="user-dropdown" class="user-dropdown hidden">
@@ -62,7 +62,7 @@
     </ul>
   </nav>
 
-  <!-- VERSTECKTE ELEMENTE FÜR SCRIPT.JS (verhindert alle null-Fehler) -->
+  <!-- VERSTECKTE ELEMENTE FÜR SCRIPT.JS -->
   <div style="display: none;">
     <span id="next-prayer"></span>
     <span id="next-prayer-countdown"></span>
@@ -75,6 +75,7 @@
   </div>
 
   <main>
+    <!-- Kurze Info -->
     <section class="info-section">
       <div class="info-card">
         <h2>Willkommen bei der Sakinah Initiative</h2>
@@ -82,6 +83,7 @@
       </div>
     </section>
 
+    <!-- Gebetszeiten -->
     <section id="gebetszeiten" class="section">
       <h2>Gebetszeiten</h2>
       <p id="stadt-name"></p>
@@ -101,7 +103,7 @@
       </div>
     </section>
 
-    <!-- Feiertage und Inspiration bleiben gleich -->
+    <!-- Islamische Tage -->
     <section class="section">
       <h2>Islamische Tage</h2>
       <div class="feiertage-grid">
@@ -116,6 +118,7 @@
       </div>
     </section>
 
+    <!-- Hadith & Dua -->
     <section class="section">
       <div class="inspiration-grid">
         <div class="inspiration-card">
@@ -139,12 +142,15 @@
     <p>&copy; 2026 Sakinah Initiative – Abdul Rahman ibn Walid Itani</p>
   </footer>
 
+  <!-- Kleines Script für Dropdowns -->
   <script>
     function toggleUserDropdown() {
       const dropdown = document.getElementById("user-dropdown");
       dropdown.classList.toggle("hidden");
       dropdown.classList.toggle("show");
     }
+
+    // Schließen bei Klick außerhalb
     document.addEventListener("click", (e) => {
       if (!document.querySelector(".user-menu").contains(e.target)) {
         const dropdown = document.getElementById("user-dropdown");
